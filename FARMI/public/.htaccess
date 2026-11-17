@@ -1,0 +1,42 @@
+# Disable directory browsing
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+
+	# Redirect Trailing Slashes...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} (.+)/$
+	RewriteRule ^ %1 [L,R=301]
+
+	# Rewrite "www.example.com -> example.com"
+	RewriteCond %{HTTPS} !=on
+	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+	RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+	# Envia todas as requisições diretamente para o index.php sem alterar o caminho
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^ index.php [L]
+
+	# Passa o cabeçalho Authorization para a API
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+	ErrorDocument 404 index.php
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+</IfModule>
+
+ServerSignature Off
+
+RewriteEngine On
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]

@@ -1,0 +1,57 @@
+<?php
+
+namespace Config;
+
+use CodeIgniter\Config\Filters as BaseFilters;
+use CodeIgniter\Filters\CSRF;
+use CodeIgniter\Filters\DebugToolbar;
+use CodeIgniter\Filters\Honeypot;
+use CodeIgniter\Filters\InvalidChars;
+use CodeIgniter\Filters\PageCache;
+use CodeIgniter\Filters\PerformanceMetrics;
+use CodeIgniter\Filters\SecureHeaders;
+
+class Filters extends BaseFilters
+{
+    public array $aliases = [
+        'csrf'          => CSRF::class,
+        'toolbar'       => DebugToolbar::class,
+        'honeypot'      => Honeypot::class,
+        'invalidchars'  => InvalidChars::class,
+        'secureheaders' => SecureHeaders::class,
+        'pagecache'     => PageCache::class,
+        'performance'   => PerformanceMetrics::class,
+
+        'cors' => \App\Filters\CorsFilter::class,
+        'auth' => \App\Filters\AuthFilter::class,
+    ];
+
+    public array $required = [
+        'before' => [
+            'pagecache',
+        ],
+        'after' => [
+            'pagecache',
+            'performance',
+        ],
+    ];
+
+    public array $globals = [
+        'before' => [
+            'cors', // <-- ADICIONADO: Executa o CORS em todas as requisições
+            'csrf' => [
+                'except' => [
+                    'api/*',
+                    'fazenda/inserir',
+                ],
+            ],
+        ],
+        'after' => [
+            'toolbar',
+        ],
+    ];
+
+    public array $filters = [];
+
+    public array $methods = [];
+}
