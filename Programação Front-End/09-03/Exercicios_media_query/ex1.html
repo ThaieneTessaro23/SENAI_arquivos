@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Media Queries</title>
+        <style>
+            .circulo{
+                width: 350px;
+                height: 350px;
+                border: 1px solid #000;
+                border-radius: 50%;
+            }
+            @media screen and (min-width: 1024px){
+                .circulo{
+                    background-color: #11cf17;
+                }
+            }
+            @media screen and (max-width: 1023px) and (min-width: 767px){
+                .circulo{
+                    background-color: #e8e80e;
+                }
+            }
+            @media screen and (max-width: 768px){
+                .circulo{
+                    background-color: #e80e19;
+                }
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>Semáfaro!</h1>
+        <div class="circulo"></div>
+    </body>
+</html>

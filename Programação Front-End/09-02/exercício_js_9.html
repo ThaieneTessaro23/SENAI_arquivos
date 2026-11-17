@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset='UTF-8'>
+		<title>POO + JS</title>
+	</head>
+	<body>
+		<p>Exercício 9 POO + JS</p>
+	</body>
+	<script>
+		//Classe
+		function ContaBancaria(){
+			this.Titular = "";
+			this.NumeroConta = "";
+			this.Saldo = 0;
+			
+			//GETTER
+			this.getTitular = function(){
+				return this.Titular;
+			}
+			this.getNumeroConta = function(){
+				return this.NumeroConta;
+			}
+			this.getSaldo = function(){
+				return this.Saldo;
+			}
+			
+			//SETTER
+			this.setTitular = function(titular){
+				this.Titular = titular;
+			}
+			this.setNumeroConta = function(conta){
+				this.NumeroConta = conta;
+			}
+			this.setSaldo = function(saldo){
+				this.Saldo = saldo;
+			}
+			
+			
+			this.depositar = function(valor){ 
+				this.Saldo += valor;
+				return "Saldo: R$" + this.Saldo ;
+			}
+			this.sacar = function(valor){ 
+				this.Saldo -= valor;
+				alert ("Saldo: R$" + this.Saldo) ;
+			}
+		}
+		
+		//Objetos
+		for (let i=0; i<3; i++){
+			conta = new ContaBancaria();
+			conta.setTitular(prompt("Digite o titular da conta: "));
+			conta.setNumeroConta(prompt("Digite o número da conta: "));
+			conta.setSaldo(parseInt(prompt("Digite o saldo inicial: ")));
+			conta.depositar(parseInt(prompt("Digite o valor para depositar na conta: ")));
+			alert(conta.getSaldo());
+			
+			conta.sacar(parseInt(prompt("Digite o valor para sacar na conta: ")));
+			alert(conta.getSaldo());
+			alert("Conta Bancária " + (i+1) + "\n Titular: " + conta.getTitular() + "\n Número Conta: " + conta.getNumeroConta() + "\n Saldo: " + conta.getSaldo());
+		}
+	</script>
+</html>

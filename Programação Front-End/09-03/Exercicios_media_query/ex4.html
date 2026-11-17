@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Media Queries</title>
+        <style>
+            .galeria{
+                flex-wrap: wrap;
+                display: flex;
+            }
+            @media (min-width: 1024px){
+                .galeria img{
+                  width: 25%;
+                }
+            }
+            @media (max-width: 1023px) and (min-width: 767px){
+                .galeria img{
+                  width: 50%;
+                }
+            }
+            @media (max-width: 768px){
+                .galeria img{
+                    width: 100%;
+                }
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>Imagens</h1>
+        <div class="galeria">
+            <img src="cao_dino.jpg">
+            <img src="cao_fofo_dino.jpg">
+            <img src="cao_salsicha_dino.jpg">
+            <img src="coelho_dino.jpg">
+        </div>
+
+    </body>
+</html>

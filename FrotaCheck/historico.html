@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5C2D91">
+  <title>Histórico de Checklists - FrotaCheck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-shield">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#5C2D91" stroke="none"/>
+            <path d="M7 11.5l3 3 7-7" stroke="#F05123" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title"><span class="purple">FROTA</span><span class="orange">Check</span></span>
+          <span class="brand-tagline">GESTÃO INTELIGENTE DE FROTAS</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="veiculos.html">Veículos</a>
+        <a href="checklist.html">Novo Checklist</a>
+        <a href="historico.html" class="active">Histórico</a>
+      </nav>
+
+      <div class="status-badge" id="offlineBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">Online</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <h2>Histórico de Inspeções</h2>
+      <p>Consulte todos os checklists realizados, resultados de liberação e observações.</p>
+    </div>
+
+    <!-- FILTROS -->
+    <section class="card filter-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="filterResult">Filtrar por Resultado:</label>
+          <select id="filterResult" class="form-control" onchange="filterHistory()">
+            <option value="ALL">Todos os Resultados</option>
+            <option value="Veículo Liberado">Veículo Liberado</option>
+            <option value="Veículo Não Liberado">Veículo Não Liberado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="searchPlaca">Buscar por Placa ou Responsável:</label>
+          <input type="text" id="searchPlaca" class="form-control" placeholder="Digite para buscar..." onkeyup="filterHistory()">
+        </div>
+      </div>
+    </section>
+
+    <!-- TABELA DE HISTÓRICO -->
+    <section class="card">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Data e Hora</th>
+              <th>Veículo / Placa</th>
+              <th>Responsável</th>
+              <th>Resultado</th>
+              <th>Itens Reprovados</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="fullHistoryTable">
+            <!-- Inserido dinamicamente via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE DETALHES -->
+  <div id="detailModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Detalhes da Inspeção</h3>
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Preenchido via JS -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; FrotaCheck - Sistema de Inspeção PWA SENAI | Funcionamento 100% Offline</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

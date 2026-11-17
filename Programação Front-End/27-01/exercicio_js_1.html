@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercício 1</title>
+	</head>
+	<body>
+		<p>Esse é o exercício 1</p>
+	</body>
+	<script>
+		//Pedindo 2 números ao usuário
+		const num1 = parseInt(prompt("Digite o 1º número: "));
+		const num2 = parseInt(prompt("Digite o 2º número: "));
+		
+		//Pedindo ao usuário escolher uma operação (+,-,*,/)
+		const operacao = prompt("Digite uma operação (+,-,*,/): ");
+		
+		//Condicional para cada operação
+		if (operacao == "+"){
+			alert (num1 + num2);
+		}
+		else if (operacao == "-"){
+			alert (num1 - num2);
+		}
+		else if (operacao == "*"){
+			alert (num1 * num2);
+		}
+		else if (operacao == "/"){
+			alert (num1 / num2);
+		}
+		else{
+			alert ("Operação Inválida");
+		}
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tecnologias Assistivas</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!--Tags Semânticas (header, nav, main, etc.)-->
+        <header>
+            <h1>Bem-Vindo à página acessível!</h1>
+
+            <!--Botões de acessibilidade-->
+            <button id="contraste-btn" arial-label="Alterar Contraste">Alto Contraste</button>
+            <button id="modo-leitura-btn" arial-label="Modo Leitura">Modo Leitura</button>
+            <button id="aumentar-fonte-btn" arial-label="Aumentar Fonte">Aumentar Fonte</button>
+            <button id="diminuir-fonte-btn" arial-label="Diminuir Fonte">Diminuir Fonte</button>
+            <button id="leitor-btn" arial-label="Leitor de Tela">Leitor de Tela</button>
+        </header>
+
+        <main>
+            <section>
+                <p>Este é um exemplo de página com recursos de tecnologias assistivas</p>
+                <p>Use os botões para utilizar os recursos desenvolvidos em JS</p>
+            </section>
+        </main>
+
+        <!--Teclado Virtual-->
+        <section id="teclado-virtual">
+            <h2>Teclado Virtual</h2>
+            <div>
+                <button aria-label="A" class="key" onclick="addTecla('A')">A</button>
+                <button aria-label="B" class="key" onclick="addTecla('B')">B</button>
+                <button aria-label="C" class="key" onclick="addTecla('C')">C</button>
+            </div>
+            <p id="resultado">Precione as teclas para digital: <br></p>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset='UTF-8'>
+		<title>POO + JS</title>
+	</head>
+	<body>
+		<p>Exercicio 8 POO + JS</p>
+	</body>
+	<script>
+		//Classe
+		function Celular(){
+			this.Marca = "";
+			this.Modelo = "";
+			this.NivelBateria = 0;
+			
+			//GETTER
+			this.getMarca = function(){
+				return this.Marca;
+			}
+			this.getModelo = function(){
+				return this.Modelo;
+			}
+			this.getNivelBateria = function(){
+				return this.NivelBateria;
+			}
+			
+			//SETTER
+			this.setMarca = function(marca){
+				this.Marca = marca;
+			}
+			this.setModelo = function(modelo){
+				this.Modelo = modelo;
+			}
+			this.setNivelBateria = function(bateria){
+				this.NivelBateria = bateria;
+			}
+			
+			this.carregarBateria = function(){ 
+			
+				if (this.NivelBateria <= 90){
+					this.NivelBateria += 10;
+					return "Carregando... Nivel de bateria " + this.NivelBateria + "%";
+				} else{
+					return "Não é possível carregar!" + this.NivelBateria;
+				}
+			}
+		}
+		
+		//Objetos
+		for (let i=0; i<3; i++){
+			celular = new Celular();
+			celular.setMarca(prompt("Digite a marca do celular: "));
+			celular.setModelo(prompt("Digite o modelo do celular: "));
+			celular.setNivelBateria(parseInt(prompt("Digite o nível da bateria do celular: ")));
+			alert("Celular " + (i+1) + "\n Marca: " + celular.getMarca() + "\n Modelo: " + celular.getModelo());
+			alert(celular.carregarBateria());
+			alert(celular.carregarBateria());
+			alert(celular.carregarBateria());
+			alert(celular.carregarBateria());
+			
+			
+		}
+	</script>
+</html>

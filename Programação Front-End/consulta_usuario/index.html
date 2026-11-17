@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>Consulta de Usuário</h1>
+
+        <div class="consulta">
+            <label for="codigo">Código do usuário</label>
+
+            <input
+                type="number"
+                id="codigo"
+                min="1"
+                placeholder="Digite o código"
+            >
+
+            <button id="btnConsultar">Consultar</button>
+        </div>
+
+        <p id="mensagem"></p>
+
+        <section id="resultado"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

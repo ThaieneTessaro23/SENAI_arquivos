@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Formulário Inteligente</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <form>
+            <h1>Formulário de Cadastro</h1>
+
+            <!--Dados-->
+            <h2>Dados do Usuário</h2>
+            <input type="text" placeholder="Nome..." required>
+            <input type="email" placeholder="E-mail..." required>
+
+            <!--Geolocalização-->
+            <h2>Localização</h2>
+            <button type="button" onclick="getLocalizacao()">Obter Localização</button>
+            <div id="map"></div>
+
+            <!--Drag and Drop-->
+            <h2>Seleção de Interesses</h2>
+            <div class="flex">
+                <div class="container" id="origem">
+                    <div class="item" draggable="true">Tecnologia</div>
+                    <div class="item" draggable="true">Educação</div>
+                    <div class="item" draggable="true">Agronegócio</div>
+                </div>
+
+                <div class="container" id="destino"></div>
+            </div>
+
+            <!--Câmera-->
+            <h2>Captura de foto</h2>
+            <video id="video" autoplay></video>
+            <button type="button" id="captura">Capturar Foto</button>
+            <canvas id="canvas" style="display: none;"></canvas>
+            <img id="foto">
+
+            <!--Botão Salvar-->
+            <button type="button" onclick="salvarDados()">Salvar Dados</button>
+
+            <!--Exibir dados-->
+            <h2>JSON Gerado</h2>
+            <pre id="saida"></pre>
+        </form>
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

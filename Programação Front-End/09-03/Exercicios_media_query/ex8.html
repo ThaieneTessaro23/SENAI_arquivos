@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Media Queries</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Arial;
+    }
+
+    .container{
+        display:flex;
+    }
+
+    aside{
+        background-color: blue;
+        width:25%;
+        padding:20px;
+    }
+
+    main{
+        background-color: cornflowerblue;
+        width:75%;
+        padding:20px;
+    }
+
+@media (max-width:768px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    main{
+        width:100%;
+    }
+
+    aside{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <main>
+        <h1>Conteúdo Principal</h1>
+        <p>Main</p>
+        </main>
+
+        <aside>
+        <h2>Sidebar</h2>
+        <p>Aside</p>
+        </aside>
+    </div>
+</body>
+</html>

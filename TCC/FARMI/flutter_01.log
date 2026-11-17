@@ -1,0 +1,73 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d web-server
+
+## exception
+
+RPCError: ext.flutter.debugDumpFocusTree: (-32603) Unexpected DWDS error for callServiceExtension: Bad state: No clients available for service extension
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:268:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1950:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1962:8)
+#3      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:1901:14)
+#4      FlutterVmService._checkedCallServiceExtension (package:flutter_tools/src/vmservice.dart:771:28)
+#5      FlutterVmService.invokeFlutterExtensionRpcRaw (package:flutter_tools/src/vmservice.dart:790:49)
+#6      FlutterVmService.flutterDebugDumpFocusTree (package:flutter_tools/src/vmservice.dart:602:50)
+#7      ResidentHandlers.debugDumpFocusTree (package:flutter_tools/src/resident_runner.dart:770:53)
+<asynchronous suspension>
+#8      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1829:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.38.9, on Microsoft Windows [versÆo 10.0.26200.8246],
+    locale pt-BR) [256ms]
+    [32m•[39m Flutter version 3.38.9 on channel stable at C:\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 67323de285 (3 months ago), 2026-01-28 13:43:12 -0800
+    [32m•[39m Engine revision 587c18f873
+    [32m•[39m Dart version 3.10.8
+    [32m•[39m DevTools version 2.51.1
+    [32m•[39m Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop,
+      enable-windows-desktop, enable-android, enable-ios, cli-animations,
+      enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
+
+[32m[✓][39m Windows Version (11 Pro 64-bit, 25H2, 2009) [1.385ms]
+
+[31m[✗][39m Android toolchain - develop for Android devices [20ms]
+    [31m✗[39m Unable to locate Android SDK.
+      Install Android Studio from: https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK components.
+      (or visit https://flutter.dev/to/windows-android-setup for detailed
+      instructions).
+      If the Android SDK has been installed to a custom location, please use
+      `flutter config --android-sdk` to update to that location.
+
+
+[32m[✓][39m Chrome - develop for the web [6ms]
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[31m[✗][39m Visual Studio - develop Windows apps [6ms]
+    [31m✗[39m Visual Studio not installed; this is necessary to develop Windows apps.
+      Download at https://visualstudio.microsoft.com/downloads/.
+      Please install the "Desktop development with C++" workload, including all of its
+      default components
+
+[32m[✓][39m Connected device (4 available) [148ms]
+    [32m•[39m Windows (desktop) • windows    • windows-x64    • Microsoft Windows [versÆo
+      10.0.26200.8246]
+    [32m•[39m Web Server (web)  • web-server • web-javascript • Flutter Tools
+    [32m•[39m Chrome (web)      • chrome     • web-javascript • Google Chrome 145.0.7632.110
+    [32m•[39m Edge (web)        • edge       • web-javascript • Microsoft Edge 148.0.3967.54
+
+[32m[✓][39m Network resources [531ms]
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 2 categories.
+```

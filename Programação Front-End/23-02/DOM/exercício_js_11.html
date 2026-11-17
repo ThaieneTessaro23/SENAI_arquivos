@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Escola DOM + JS</title>
+		<meta charset= "UTF-8">
+	</head>
+	<body>
+		<h2> Escola SESI </h2><br>
+		<button onClick="Hora()">Horário de funcionamento</button>
+		<button onClick="mudarFonte()">Mudar Fonte</button>
+		<button onClick="aumentarFonte()"> Aumenta Fonte </button>
+		<button onClick="diminuirFonte()"> Diminuir Fonte </button>
+		<button onClick="limpar()">Limpar</button>
+		<p id="mensagem"></p>
+	</body>
+	<script>
+		function Hora(){
+			document.getElementById("mensagem").innerHTML = "<b>Horário de funcionamento: </b> 9h - 18h <br>";
+		}
+		function mudarFonte(){
+			var fonte = prompt("Escolha uma fonte (Arial, Verdana...)");
+			document.getElementById("mensagem").style.fontFamily = fonte;
+		}
+		function aumentarFonte(){
+			document.getElementById("mensagem").style.fontSize = "24px";
+		}
+		function diminuirFonte(){
+			document.getElementById("mensagem").style.fontSize = "12px";
+		}
+		function limpar(){
+			document.getElementById("mensagem").innerHTML = "";
+		}
+	</script>
+</html>

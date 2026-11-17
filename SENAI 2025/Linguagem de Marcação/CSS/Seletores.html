@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			<!--Seletor Atributo--!>
+			a[target] {
+				background-color: yellow;
+			}
+			
+			<!--Seletor Descendente--!>
+			div p {
+				background-color: gold;
+				border: 1px solid gray;
+			}
+
+			<!--Seletor Filho Direto--!>
+			div > p {
+				background-color: gold;
+				border: 1px solid gray;
+			}
+			
+			<!--Seletor Adjacente Direto--!>
+			div + p {
+			  background-color: yellow;
+			}
+			
+			<!--Seletor de Irmãos Gerais--!>
+			div ~ p {
+			  background-color: yellow;
+			}
+			
+			<!-- Seletor de Pseudoclasse--!>
+			selector:pseudo-class-name {
+				CSS properties
+			}
+			
+			<!-- Seletor de Pseudoelemento--!>
+			selector::pseudo-element-name {
+				CSS properties
+			}
+		</style>
+	</head>
+	<body>
+	
+	<h2>CSS [attribute] Selector</h2>
+
+	<p>Select and style the links with a target attribute:</p>
+
+	<a href="https://www.w3schools.com" target="_blank">W3schools.com</a>
+	<a href="https://www.w3schools.com/css/">CSS</a>
+	<a href="https://www.w3schools.com/html/" target="_blank">HTML</a>
+	
+	<h1>The Descendant ( ) Combinator</h1>
+
+	<div>
+	  <h2>Donald Duck</h2>
+	  <p>Donald Duck lives in Duckburg.</p>
+	</div>
+
+	<div>
+	  <span><p>I will be styled.</p></span>
+	  <p>I will be styled.</p>
+	</div>
+
+	<p>Donald Duck's best friend is Mickey.</p>
+
+	<h1>The Child (>) Combinator</h1>
+
+	<div>
+	  <h2>Donald Duck</h2>
+	  <p>Donald Duck lives in Duckburg.</p>
+	</div>
+
+	<div>
+	  <span><p>I will not be styled.</p></span>
+	  <p>I will be styled.</p>
+	</div>
+
+	<p>Donald Duck's best friend is Mickey.</p>
+	
+	<h2>Next Sibling Combinator (+)</h2>
+
+	<p>The + combinator is used to select an element that is directly after a specific element.</p>
+	<p>The following example selects the first p element that immediately follows a div, and share the same parent:</p>
+
+	<div>
+	  <p>Paragraph 1 in the div.</p>
+	  <p>Paragraph 2 in the div.</p>
+	</div>
+
+	<p>Paragraph 3. After a div.</p>
+	<p>Paragraph 4. After a div.</p>
+
+	<div>
+	  <p>Paragraph 5 in the div.</p>
+	  <p>Paragraph 6 in the div.</p>
+	</div>
+
+	<p>Paragraph 7. After a div.</p>
+	<p>Paragraph 8. After a div.</p>
+	
+	<h2>Subsequent-sibling Combinator (~)</h2>
+
+	<p>The ~ combinator selects all elements that are next siblings of a specified element.</p>
+	<p>The following example selects all p elements that are next siblings of div, and share the same parent:</p>
+
+	<p>Paragraph 1.</p>
+
+	<div>
+	  <p>Paragraph 2.</p>
+	</div>
+
+	<p>Paragraph 3.</p>
+	<code>Some code.</code>
+	<p>Paragraph 4.</p>
+	
+	<h2>CSS Pseudo-classes</h2>
+	
+	<h2>CSS Pseudo-elements</h2>
+	
+	
+	</body>
+</html>

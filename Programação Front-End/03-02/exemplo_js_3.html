@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title> Exemplo 3 JS </title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<p>Essa é uma página HTML + JS</p>
+	</body>
+	<script>
+		//Podemos usar arrays (vetores)
+		let frutas = ["maça", "banana", "laranja", "goiaba"];
+		alert("Array: " + frutas);
+		alert("Array posição 0: " + frutas[0]);
+		alert("Array posição 2: " + frutas[2]);
+		
+		//Podemos usar o FOR para acessar os valores (length é tipo o count do php)
+		for(let i=0; i<frutas.length; i++){
+			alert("FOR -> Array posição " + i + " = " + frutas[i]);
+		}
+		
+		//Podemos usar o foreach (para cada)
+		frutas.forEach((valor, indice) => {
+			alert("ForEach -> Array posição " + indice + " = " + valor);
+		});
+	</script>
+</html>

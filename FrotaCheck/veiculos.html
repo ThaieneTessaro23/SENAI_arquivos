@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5C2D91">
+  <title>Cadastro de Veículos - FrotaCheck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-shield">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#5C2D91" stroke="none"/>
+            <path d="M7 11.5l3 3 7-7" stroke="#F05123" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title"><span class="purple">FROTA</span><span class="orange">Check</span></span>
+          <span class="brand-tagline">GESTÃO INTELIGENTE DE FROTAS</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="veiculos.html" class="active">Veículos</a>
+        <a href="checklist.html">Novo Checklist</a>
+        <a href="historico.html">Histórico</a>
+      </nav>
+
+      <div class="status-badge" id="offlineBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">Online</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <h2>Gestão de Veículos</h2>
+      <p>Cadastre e mantenha atualizada a frota de veículos da empresa.</p>
+    </div>
+
+    <div class="grid-layout">
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <section class="card">
+        <h3>Cadastrar / Editar Veículo</h3>
+        <form id="vehicleForm">
+          <input type="hidden" id="vehicleIndex" value="-1">
+
+          <div class="form-group">
+            <label for="placa">Placa do Veículo *</label>
+            <input type="text" id="placa" class="form-control" placeholder="ABC-1234 ou ABC1D23" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="marca">Marca *</label>
+              <input type="text" id="marca" class="form-control" placeholder="Ex: Volvo, FIAT" required>
+            </div>
+            <div class="form-group">
+              <label for="modelo">Modelo *</label>
+              <input type="text" id="modelo" class="form-control" placeholder="Ex: FH 540, Fiorino" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="ano">Ano *</label>
+              <input type="number" id="ano" class="form-control" placeholder="Ex: 2023" min="1990" max="2030" required>
+            </div>
+            <div class="form-group">
+              <label for="tipo">Tipo de Veículo *</label>
+              <select id="tipo" class="form-control" required>
+                <option value="">Selecione...</option>
+                <option value="Caminhão">Caminhão</option>
+                <option value="Utilitário / Van">Utilitário / Van</option>
+                <option value="Passeio / Frota">Passeio / Frota</option>
+                <option value="Moto">Moto</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="status">Status Operacional *</label>
+            <select id="status" class="form-control" required>
+              <option value="Ativo">Ativo</option>
+              <option value="Em Manutenção">Em Manutenção</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="btnSaveVehicle">Cadastrar Veículo</button>
+            <button type="button" class="btn btn-secondary" id="btnCancelEdit" style="display:none;">Cancelar</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- LISTA DE VEÍCULOS -->
+      <section class="card">
+        <h3>Veículos Cadastrados</h3>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Placa</th>
+                <th>Modelo / Marca</th>
+                <th>Tipo / Ano</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="vehicleTableBody">
+              <!-- Inserido dinamicamente via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; FrotaCheck - Sistema de Inspeção PWA SENAI | Funcionamento 100% Offline</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

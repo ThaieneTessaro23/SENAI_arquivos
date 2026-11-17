@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset='UTF-8'>
+		<title>POO + JS</title>
+	</head>
+	<body>
+		<p>Exercício aluno POO + JS</p>
+	</body>
+	<script>
+		//Classe
+		function Aluno(){
+			this.Nome = "";
+			this.Idade = "";
+			this.CPF = "";
+			this.Telefone = "";
+			this.Email = "";
+			this.Curso = "";
+			
+			//GETTER
+			this.getNome =  function(){
+				return this.Nome;
+			}
+			this.getIdade =  function(){
+				return this.Idade;
+			}
+			this.getCPF =  function(){
+				return this.CPF;
+			}
+			this.getTelefone =  function(){
+				return this.Telefone;
+			}
+			this.getEmail =  function(){
+				return this.Email;
+			}
+			this.getCurso =  function(){
+				return this.Curso;
+			}
+			
+			//SETTER
+			this.setNome = function(nome){
+				this.Nome = nome;
+			}
+			this.setIdade = function(idade){
+				this.Idade = idade;
+			}
+			this.setCPF = function(cpf){
+				this.CPF = cpf;
+			}
+			this.setTelefone = function(telefone){
+				this.Telefone = telefone;
+			}
+			this.setEmail = function(email){
+				this.Email = email;
+			}
+			this.setCurso = function(curso){
+				this.Curso = curso;
+			}
+		}
+		
+		//Objetos (3)
+		for (let i=0; i<3; i++){
+			aluno = new Aluno();
+			aluno.setNome (prompt("Digite o nome do aluno: "));
+			aluno.setIdade (prompt("Digite a idade do aluno: "));
+			aluno.setCPF (prompt("Digite o CPF do aluno: "));
+			aluno.setTelefone (prompt("Digite o telefone do aluno: "));
+			aluno.setEmail (prompt("Digite o email do aluno: "));
+			aluno.setCurso (prompt("Digite o curso do aluno: "));
+			
+			alert(
+			"Aluno " + (i+1) + "\n Nome: " + aluno.getNome() + "\n Idade: " + aluno.getIdade() +
+			"\n CPF: " + aluno.getCPF() + "\n Telefone: " + aluno.getTelefone() +
+			"\n Email: " + aluno.getEmail() + "\n Curso: " + aluno.getCurso()
+			);
+		}
+	</script>
+</html>

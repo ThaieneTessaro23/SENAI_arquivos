@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>E-commerce Gabriel</title>
+        <meta charset = "UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="cadastrar_style.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li style="float:right">
+                        <a class="active" href="login.html">
+                            <i class="fas fa-user-circle"></i>Entre ou cadastre-se
+                        </a>
+                    </li>
+                    <li style="float:right">
+                        <a href="carrinho.html">
+                            <i class="fas fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div class="cupom">
+                    <p class="center">Use o cupom SENAI10 e ganhe 10% OFF</p>
+                </div>
+            </nav>
+        </header>
+        <main class="login-main">
+            <br><br>
+            <div class="login-header">
+                <h1>Cadastre-se</h1>
+            </div>
+            <div class="login-content">
+                <h3>Dados pessoas</h3>
+                <div class="input-container">
+                    <input placeholder="Nome..." class="input-field" type="text" required>
+                    <label for="input-field" class="input-label">* Nome</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-container">
+                    <input placeholder="CPF..." class="input-field" type="text" required>
+                    <label for="input-field" class="input-label">* CPF</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-container">
+                    <input placeholder="E-mail..." class="input-field" type="email" required>
+                    <label for="input-field" class="input-label">* E-mail</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-container">
+                    <input placeholder="Senha..." class="input-field" type="password" required>
+                    <label for="input-field" class="input-label">* Senha</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-container">
+                    <input placeholder="Confirmar Senha..." class="input-field" type="password" required>
+                    <label for="input-field" class="input-label">*Confirmar Senha</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-container">
+                    <input placeholder="Telefone..." class="input-field" type="tel" required>
+                    <label for="input-field" class="input-label">* Telefone</label>
+                    <span class="input-highlight"></span>
+                </div>
+                <div class="input-container">
+                    <input placeholder="Endereço..." class="input-field" type="text" required>
+                    <label for="input-field" class="input-label">* Endereço</label>
+                    <span class="input-highlight"></span>
+                </div>
+
+                <div class="form-button">
+                    <button><span>Cadastrar</span></button>
+                </div>
+            </div>
+        </main>
+        <footer class="rodape">
+            <nav class="links_rodape">
+                <a class="link_rodape" href="#">Contato</a><br>
+                <a class="link_rodape" href="#">Sobre nós</a><br>
+                <a class="link_rodape" href="#">Termos de Uso</a><br>
+                <a class="link_rodape" href="#">Políticas de Cookie</a><br>
+            </nav>
+            <div class="dados_contato">
+                <p class="texto_rodape">Email: contato@email.com</p>
+                <p class="texto_rodape">Telefone: (19) 99999-9999</p>
+                <p class="texto_rodape">Endereço: Rua Cidade Feliz, 123</p>
+            </div>
+            <br><br>
+            <div class="direitos_reservados">
+                <br>
+                &copy; 2025 SENAI | Todos os direitos reservados.
+            </div>
+        </footer>
+    </body>
+</html>

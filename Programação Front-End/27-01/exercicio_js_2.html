@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercício 2</title>
+	</head>
+	<body>
+		<p>Esse é o exercício 2</p>
+	</body>
+	<script>
+		//Pedindo ao usuário escolher uma forma geométrica
+		let forma = prompt("Digite uma forma geométrica (círculo, quadrado ou retângulo): ");
+		
+		//Condicional para cada operação
+		if (forma == "círculo"){
+			const raio = parseInt(prompt("Digite o tamanho do RAIO: "));
+			alert ("A área do círculo é: " +(3.14 * raio * raio));
+		}
+		else if (forma == "quadrado"){
+			const lado = parseInt(prompt("Digite o tamanho do LADO: "));
+			alert ("A área do quadrado é: " +(lado * lado));
+		}
+		else if (forma == "retângulo"){
+			const base = parseInt(prompt("Digite o tamanho da BASE: "));
+			const altura = parseInt(prompt("Digite o tamanho da ALTURA: "));
+			alert ("A área do retângulo é: " +(base * altura));
+		}
+		else{
+			alert ("Operação inválida");
+		}
+	</script>
+</html>

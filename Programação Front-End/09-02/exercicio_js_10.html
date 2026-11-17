@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset='UTF-8'>
+		<title>POO + JS</title>
+	</head>
+	<body>
+		<p>Exercício 10 POO + JS</p>
+	</body>
+	<script>
+		//Classe
+		function Pedido(){
+			this.nomeCliente = "";
+			this.itemPedido = "";
+			this.quantidade = 0;
+			
+			//GETTER
+			this.getnomeCliente = function(){
+				return this.Nome;
+			}
+			this.getitemPedido = function(){
+				return this.Item;
+			}
+			this.getquantidade = function(){
+				return this.Quantidade;
+			}
+			this.gettotal = function(){
+				return this.Total;
+			}
+			
+			//SETTER
+			this.setnomeCliente = function(nome){
+				this.Nome = nome;
+			}
+			this.setitemPedido = function(item){
+				this.Item = item;
+			}
+			this.setquantidade = function(quant){
+				this.Quantidade = quant;
+			}
+			
+			
+			this.calcularTotal = function(quantidade){ 
+				this.Total += quantidade*5;
+				return "Total: R$" + this.Total ;
+			}
+		}
+		
+		//Objetos
+		for (let i=0; i<3; i++){
+			pedido = new Pedido();
+			pedido.setnomeCliente(prompt("Digite o nome do Cliente: "));
+			pedido.setitemPedido(prompt("Digite o item pedido: "));
+			conta.quantidade(parseInt(prompt("Digite a quantidade: ")));
+			alert("Pedido " + (i+1) + "\n Cliente: " + pedido.getnomeCliente() + "\n Item Pedido: " + pedido.getitemPedido() + 
+			"\n Quantidade: " + pedido.getquantidade() + "\n Total: R$" + pedido.gettotal());
+		}
+	</script>
+</html>

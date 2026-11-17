@@ -1,0 +1,129 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: Arial;
+}
+body{
+    background-image: url("fazenda.jpg");
+    background-size: cover;   
+    background-position: center; 
+    background-repeat: no-repeat; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 35%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+input{
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 15px;
+    background-color: #d9d9d9;
+}
+button{
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #09660B;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer; /*Deixa com a mão do mouse*/
+}
+button:hover{
+    background-color: #4DA14D;
+}
+h3{
+    margin-top: 30px;
+    text-align: center;
+}
+pre{
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 90%;
+    font-size: 14px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    border-radius: 15px;
+}
+thead {
+    background-color: #09660B;
+    color: white;
+    border-radius: 15px;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+
+
+
+@media (max-width: 600px){
+    .container{
+        width: 70%;
+        padding: 20px;
+    }
+    h2{
+        font-size: 15px;
+    }
+}
+@media (max-width: 1023px) and (min-width: 600px){
+    .container{
+        width: 70%;
+        padding: 20px;
+    }
+    h2{
+        font-size: 20px;
+    }
+}
+@media (prefers-color-scheme: dark){
+
+    body{
+        background-color: #032605;
+        color: white;
+    }
+
+    .container{
+        background-color: #18D923;
+        color: white;
+    }
+
+    input{
+        background-color: white;
+    }
+
+}

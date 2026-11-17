@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lag="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Acessar Câmera</title>
+    </head>
+    <body>
+        <h1>Câmera</h1>
+        <video id="video" autoplay playsinline></video>
+        <button id="capturar">Capturar Foto</button>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <img id="foto" alt="Captura de Foto">
+
+        <script>
+            const video = document.getElementById("video");
+            const canvas = document.getElementById("canvas");
+            const capturar = document.getElementById("capturar");
+            const foto = document.getElementById("foto");
+
+            //Acessar a câmera
+            navigator.mediaDevices.getUserMedia({video: true})
+                .then(stream => {
+                    video.srcObject = stream;
+                })
+                .catch(error => {
+                    console.error("Erro ao acessar a câmera: ", error)
+                });
+
+            //Capturar imagem da câmera
+            capturar.addEventListener("click", () => {
+                const context = canvas.getContext('2d');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.drawImage(video, 0, 0, canvas.width, canvas.height);
+                foto.src = canvas.toDataURL('image/png');
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/*Estilo do alto contraste*/
+.alto-contraste{
+    background-color: #000;
+    color: #FFFF00;
+}
+
+/*Estilo do botão*/
+button{
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #FFFF00;
+    color: #000;
+    border: 2px solid #FFFF00;
+}
+
+/*Modo leitura*/
+.modo-leitura{
+    line-height: 1.8;
+    background-color: #f4f4f4;
+    color:#333;
+}
+
+/*Aumentar Fonte*/
+.aumentar-fonte{
+    font-size: 1.2em;
+}
+
+/*Diminuir Fonte*/
+.diminuir-fonte{
+    font-size: 1em;
+}
+

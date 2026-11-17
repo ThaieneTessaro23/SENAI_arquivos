@@ -1,0 +1,121 @@
+/* ============================================================
+   style.css
+   Responsabilidade: cuidar apenas da APARÊNCIA da página.
+   Nenhuma lógica de cálculo ou manipulação de dados deve
+   estar aqui — isso é trabalho do JavaScript.
+============================================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 480px;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* --- Formulário --- */
+
+.campo {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.campo input {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- Área de resultado --- */
+
+.resultado {
+  margin-top: 24px;
+  padding: 16px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+/* Classe usada pelo JavaScript para esconder/mostrar o
+   bloco de resultado (display: none) */
+.escondido {
+  display: none;
+}
+
+.resultado h2 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.linha-resultado {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.linha-resultado.destaque {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 8px;
+  padding-top: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2563eb;
+}

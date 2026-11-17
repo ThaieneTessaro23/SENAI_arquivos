@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+.center{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1F2836;
+    width: 100%;
+    top: 0;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.active{
+    background-color: #283B4F;
+}
+.active:hover{
+    background-color: #596678;
+}
+li a:hover:not(.active){
+    background-color: #979797;
+}
+.cupom{
+    background-color: #79798F;
+    padding: 10px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-width: 100vh;
+    margin: 0;
+}
+.content{
+    flex: 1;
+}
+.product_title{
+    width: 100%;
+    color:#fff;
+    background-color: #283B4F;
+}
+.product_row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product_container{
+    width: 20%;
+    margin: 1%;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+.product_itens{
+    transition: border 0.3s ease, width 0.4s ease;
+    width: 100%;
+}
+.product_container:hover{
+    color: #596678;
+}
+.product_container img:hover{
+    border: 1px solid #283B4F;
+    width: 98%;
+}
+.btn_comprar{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #283B4F;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn_comprar:hover{
+    background-color: #596678;
+}
+.desconto{
+    text-decoration: line-through;
+    color: #999;
+}
+.rodape{
+    background-color: #1F2836;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%
+}
+.links_rodape{
+    float: left;
+    width: 50%;
+    border-right: 1px solid #fff;
+}
+.link_rodape{
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+.venum{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+}

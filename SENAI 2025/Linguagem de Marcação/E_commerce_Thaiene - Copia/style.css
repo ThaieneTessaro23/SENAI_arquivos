@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+.center{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    top: 0;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.active{
+    background-color: #dd203c;
+}
+.active:hover{
+    background-color: #e76276;
+}
+li a:hover:not(.active){
+    background-color: #979797;
+}
+.cupom{
+    background-color: #eaeaea;
+    padding: 10px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-width: 100vh;
+    margin: 0;
+}
+.content{
+    flex: 1;
+}
+.product_title{
+    width: 100%;
+    border-bottom: 5px solid #dd203c;
+}
+.product_row{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product_container{
+    width: 20%;
+    margin: 1%;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+.product_itens{
+    transition: border 0.3s ease, width 0.4s ease;
+    width: 100%;
+}
+.product_container:hover{
+    color: #dd203c;
+}
+.product_container img:hover{
+    border: 1px solid #dd203c;
+    width: 98%;
+}
+.btn_comprar{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #dd203c;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn_comprar:hover{
+    background-color: #e76276;
+}
+.desconto{
+    text-decoration: line-through;
+    color: #999;
+}
+.rodape{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    bottom: 0;
+    width: 100%
+}
+.links_rodape{
+    float: left;
+    width: 50%;
+    border-right: 1px solid #fff;
+}
+.link_rodape{
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+.login_input{
+    font-size: 15px;
+    padding: 20px;
+    width: 50%;
+    background-color: #eaeaea;
+    border: none;
+    border-bottom: 2px solid #333;
+    color: #333;
+}
+.login_input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #e76276;
+    box-shadow: 0 0 5px #e76276;
+}
+.login_input:focus::placeholder{
+    color:#e76276
+}
+
+.senai{
+    float: right;
+    margin: 15px 15px 15px 15px;
+}
+.texto_sobre{
+    padding: 15px 15px 15px 15px;
+}
+.contato{
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+}
+.lupa{
+    font-size: 15px;
+    padding: 20px;
+    width: 30%;
+    background-color: #eaeaea;
+    border: none;
+    border-bottom: 2px solid #333;
+    color: #333;
+    border-radius: 30px;
+}
+.contato{
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+}
+.esqueci-header{
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+}
+.esqueci-form{
+    font-size: 15px;
+    padding: 10px;
+    width: 35%;
+    background-color: #eaeaea;
+    border: none;
+    border-bottom: 2px solid #333;
+    color: #333;
+}
+.but {
+  background-color: #eaeaea;
+  color: #dd203c;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100px;
+  height: 45px;
+  transition: 0.3s;
+}
+.but:hover {
+  background-color: #dd203c;
+  box-shadow: 0 0 0 5px #e76276;
+  color: #fff;
+}
+
+.carrinho{
+    background-color: #dd203c;
+    padding: 15px 15px 15px 15px;
+}

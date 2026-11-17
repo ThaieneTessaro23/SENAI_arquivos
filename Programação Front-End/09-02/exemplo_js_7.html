@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset='UTF-8'>
+		<title>POO + JS</title>
+	</head>
+	<body>
+		<p>Exemplo POO + JS</p>
+	</body>
+	<script>
+		//Classe
+		function Carro(){
+			this.Marca = "";
+			this.Modelo = "";
+			
+			//getter - pegar os dados
+			this.getMarca = function(){
+				return this.Marca;
+			}
+			this.getModelo = function(){
+				return this.Modelo;
+			}
+			
+			//setter - colocar os dados
+			this.setMarca = function(marca){
+				this.Marca = marca;
+			}
+			this.setModelo = function(modelo){
+				this.Modelo = modelo;
+			}
+		}
+		
+		//Objeto 1
+		carro1 = new Carro();
+		carro1.setMarca("Ford");
+		carro1.setModelo("Ka");
+		console.log(carro1.getMarca());
+		console.log(carro1.getModelo());
+		
+		//Objeto 2
+		carro2 = new Carro();
+		carro2.setMarca("VW");
+		carro2.setModelo("Gol Quadrado");
+		alert(carro2.getMarca() + ' - ' + carro2.getModelo());
+		
+		//Objeto 3
+		carro3 = new Carro();
+		carro3.setMarca(prompt("Digite a marca do carro: "));
+		carro3.setModelo(prompt("Digite o modelo do carro: "));
+		alert(carro3.getMarca() + " - " + carro3.getModelo());
+		
+		//Objetos
+		for (let i=0; i<3; i++){
+			carro = new Carro();
+			carro.setMarca(prompt("Digite a marca do carro: "));
+			carro.setModelo(prompt("Digite o modelo do carro: "));
+			alert("Carro" + (i+1) + ":\n" + carro.getMarca() + "\n" + carro.getModelo());
+		}
+	</script>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício 12 - JS</title>
+        <style>
+            .erro{
+                color: red;
+                font-size: 14px;
+            }
+            input{
+                display: block;
+                padding: 5px;
+                width:250px;
+            }
+            .bordaVermelha{
+                border: 2px solid red;
+            }
+            .bordaVerde{
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cadastro de Funcionários</h1>
+        <hr>
+        <form id="formCadastro">
+            <label>Nome do Produto: </label>
+            <input type="text" id="nome" name="nome" placeholder="Nome...">
+            <span id="erroNome" class="erro"></span>
+            <br><br>
+
+            <label>Código do Produto: </label>
+            <input type="text" id="codigo" name="codigo" placeholder="Codigo...">
+            <span id="erroCodigo" class="erro"></span>
+            <br><br>
+
+            <label>Categoria do produto: </label>
+            <select id="setor" name="setor">
+                <option value="">-- Selecione --</option>
+                <option value="Motor">Motor</option>
+                <option value="Transmissão">Transmissão</option>
+                <option value="Suspensão">Suspensão</option>
+                <option value="Freios">Freios</option>
+                <option value="Elétrica">Elétrica</option>
+                <option value="Acabamento">Acabamento</option>
+            </select>
+            <span id="erroSetor" class="erro"></span>
+            <br><br>
+
+            <label>Número de série: </label>
+            <input type="text" id="serie" name="serie">
+            <span id="erroSerie" class="erro"></span>
+            <br><br>
+
+            <label>Fornecedor: </label>
+            <input type="text" id="fornecedor" name="fornecedor">
+            <span id="erroFornecedor" class="erro"></span>
+            <br><br>
+
+            <label>Preço unitário: </label>
+            <input type="number" id="preco" name="preco">
+            <span id="erroPreco" class="erro"></span>
+            <br><br>
+
+            <label>Data de fabricação: </label>
+            <input type="date" id="data" name="data">
+            <span id="erroData" class="erro"></span>
+            <br><br>
+            
+            <label>Telefone do fornecedor: </label>
+            <input type="text" id="tel" name="tel" placeholder="(00)00000-0000">
+            <span id="erroTel" class="erro"></span>
+            <br><br>
+
+            <label>CNPJ do fornecedor: </label>
+            <input type="text" id="cnpj" name="cnpj" placeholder="00.000.000/0000-00">
+            <span id="erroCNPJ" class="erro"></span>
+            <br><br>
+
+            <button type="submit">Enviar!</button>
+        </form>
+
+        <script src="exercicio_js_13.js"></script>
+    </body>
+</html>

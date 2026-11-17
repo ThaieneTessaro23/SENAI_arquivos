@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Exemplo 11 - DOM - JS</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<p id="pMeuNome">Meu nome é Thaiene!</p>
+	</body>
+	<script>
+		//var -> Variável
+		//Método DOM
+		var paragrafo = document.getElementById("pMeuNome");
+		alert("Método DOM: " + paragrafo);
+		
+		//Propriedade do DOM
+		var textoParagrafo = document.getElementById("pMeuNome").textContent;
+		alert("Propriedade do DOM: " + textoParagrafo);
+	</script>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+      <head>
+            <title>Formulário Registro de Usuário - Exercício </title>
+            <meta charset="UTF-8">
+      </head>
+      <body>
+            <form action="#" method="POST">
+                  <label>Nome:</label>
+                  <br>
+                  <input type="text" id="nome" name="nome" required placeholder="Nome...">
+                  <br>
+                  <br>
+                  
+                  <label>Sobrenome:</label>
+                  <br>
+                  <input type="text" id="sobrenome" name="sobrenome" required placeholder="Sobrenome...">
+                  <br>
+                  <br>
+                  
+                  <label>Data de Nascimento:</label>
+                  <br>
+                  <input type="date" id="data_nasc" name="data_nasc" required max="2025-09-24">
+                  <br>
+                  <br>
+                  
+                  <label>Gênero:</label>
+                  <br>
+                  <input type="radio" id="masc" name="sexo" value="Masculino">Masculino
+                  <br>
+                  <input type="radio" id="fem" name="sexo" value="Feminino">Feminino
+                  <br>
+                  <input type="radio" id="outros" name="sexo" value="Outros">Outros
+                  <br>
+                  <br>
+                  
+                  <label>Email:</label>
+                  <br>
+                  <input type="email" id="email" name="email" required placeholder="Email@email.com">
+                  <br>
+                  <br>
+                  
+                  <label>Telefone:</label>
+                  <br>
+                  <input type="tel" id="telefone" name="telefone" placeholder="Ex: (11)1111111">
+                  <br>
+                  <br>
+                  
+                  <label>Endereço:</label>
+                  <br>
+                  <input type="endereco" id="endereco" name="endereco" placeholder="Ex: Jardim das Pitas">
+                  <br>
+                  <br>
+                  
+                  <label>Cidade:</label>
+                  <br>
+                  <input type="cidade" id="cidade" name="cidade" required placeholder="Ex: Tambaú">
+                  <br>
+                  <br>
+                  
+                  <label>Estado:</label>
+                  <br>
+                  <select name="estado" id="estado">
+                        <option>Selecione...</option>
+                        <option>Acre (AC)</option>
+                        <option>Alagoas (AL)</option>
+                        <option>Amapá (AP)</option>
+                        <option>Amazonas (AM)</option>
+                        <option>Bahia (BA)</option>
+                        <option>Ceará (CE)</option>
+                        <option>Espírito Santo (ES)</option>
+                        <option>Goiás (GO)</option>
+                        <option>Maranhão (MA)</option>
+                        <option>Mato Grosso (MT)</option>
+                        <option>Mato Grosso do Sul (MS)</option>
+                        <option>Minas Gerais (MG)</option>
+                        <option>Pará (PA)</option>
+                        <option>Paraíba (PB)</option>
+                        <option>Paraná (PR)</option>
+                        <option>Pernambuco (PE)</option>
+                        <option>Piauí (PI)</option>
+                        <option>Rio de Janeiro (RJ)</option>
+                        <option>Rio Grande do Norte (RN)</option>
+                        <option>Rio Grande do Sul (RS)</option>
+                        <option>Rondônia (RO)</option>
+                        <option>Roraima (RR)</option>
+                        <option>Santa Catarina (SC)</option>
+                        <option>São Paulo (SP)</option>
+                        <option>Sergipe (SE)</option>
+                        <option>Tocantins (TO)</option>
+                        <option>Distrito Federal (DF)</option>
+                  </select>
+                  <br>
+                  <br>
+                  
+                  <label>CEP:</label>
+                  <br>
+                  <input type="cep" id="cep" name="cep" required placeholder="CEP (ex: 13710-0000)">
+                  <br>
+                  <br>
+                  
+                  <label>Nome de Usuário:</label>
+                  <br>
+                  <input type="nome_usua" id="nome_usua" name="nome_usua" required placeholder="Nickname">
+                  <br>
+                  <br>
+                  
+                  <label>Senha:</label>
+                  <br>
+                  <input type="password" id="senha" name="senha" required placeholder="Ex: 123456789">
+                  <br>
+                  <br>
+                  
+                  <label>Foto de Perfil:</label>
+                  <br>
+                  <input type="file" id="foto" name="foto">
+                  <br>
+                  <br>
+                  
+                  
+                  <label>Hobbies:</label>
+                  <br>
+                  <input type="checkbox" id="ler_livro" name="ler_livro" >Ler livros 📚
+                  <br>
+                  <input type="checkbox" id="assistir" name="assistir">Assistir filmes e séries 🎬
+                  <br>
+                  <input type="checkbox" id="cook" name="cook">Cozinhar 🍳
+                  <br>
+                  <input type="checkbox" id="travel" name="travel" >Viajar ✈️
+                  <br>
+                  <input type="checkbox" id="jogar" name="jogar" >Jogar Videogames 🎮
+                  <br>
+                  <input type="checkbox" id="dese" name="dese" >Desenhar ou pintar 🎨
+                  <br>
+                  <input type="checkbox" id="tocar" name="tocar" >Tocar instrumentos musicais 🎶
+                  <br>
+                  <input type="checkbox" id="sport" name="sport" >Praticar Esportes ⚽
+                  <br>
+                  <input type="checkbox" id="jard" name="jard" >Jardinagem 🌱
+                  <br>
+                  <input type="checkbox" id="foto" name="foto" >Fotografia 📸
+                  <br>
+                  <br>
+                  
+                  <label>Nível de Formação:</label>
+                  <br>
+                  <select name="formacao" id="formacao">
+                        <option>Selecione...</option>
+                        <option>Fundamental Completo</option>
+                        <option>Ensino Médio Completo</option>
+                        <option>Graduação</option>
+                        <option>Pós-Graduação</option>
+                  </select>
+                  <br>
+                  <br>
+                  
+                  <label>Profissão:</label>
+                  <br>
+                  <input type="profis" id="profis" name="profis" required placeholder="Ex: Médico">
+                  <br>
+                  <br>
+                  
+                  <label>Biografia:</label>
+                  <br>
+                  <textarea id="bio" name="bio" placeholder="Insira seu texto..."></textarea>
+                  <br>
+                  <br>
+                  
+                  <input type="checkbox" id="termos" name="termos" required>Li e Aceito os termos de uso
+                  <br>
+                  <input type="checkbox" id="promo" name="promo">Aceito receber promoções
+                  <br>
+                  <input type="checkbox" id="cookie" name="cookie">Aceito os cookie do site
+                  <br>
+                  <br>
+                  
+                  <input type="submit" value="Enviar">
+                  
+            </form>
+      </body>
+</html>

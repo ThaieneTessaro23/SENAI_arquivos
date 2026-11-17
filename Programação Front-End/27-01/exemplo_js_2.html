@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Exemplo 2  JavaScript</title>
+	</head>
+	<body>
+		<p>Essa é uma página HTML com JS</p>
+	</body>
+	<script>
+		//Podemos usar 'prompt' para entrada de dados
+		let nome = prompt ("Digite seu nome: ");
+		
+		//Usamos o '+' para concatenar textos e variáveis
+		alert ("Olá, " +nome+ "! Seja bem vindo");
+		
+		//Const = variávelque não pode ser altearada
+		//parseInt() = converter para inteiro
+		const nota1 = parseInt(prompt("Digite a nota 1:"));
+		const nota2 = parseInt(prompt("Digite a nota 2:"));
+		const nota3 = parseInt(prompt("Digite a nota 3:"));
+		const nota4 = parseInt(prompt("Digite a nota 4:"));
+		
+		let media = parseFloat ((nota1 + nota2 + nota3 + nota4)/4);
+		alert("Sua média é: " +media);
+		
+		//Podemos usar estrutura condicional
+		if(media >= 7){
+			alert("Parabéns " + nome + "! Aprovado 🥰");
+		}
+		else if(media >= 4 && media < 7){
+			alert(nome + ", você está de recuperação 😖");
+		}
+		else{
+			alert(nome + ", você está reprovado 🗿");
+		}
+	</script>
+</html>

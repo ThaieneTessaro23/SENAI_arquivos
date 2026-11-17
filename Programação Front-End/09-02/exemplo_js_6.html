@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Exemplo POO</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<p>Exemplo POO com JS</p>
+	</body>
+	<script>
+		//Classe
+		function Carro(marca, modelo){
+			this.Marca = marca;
+			this.Modelo = modelo;
+			
+			this.getDetalhes = function (){
+				return this.Marca + ' - ' + this.Modelo;
+			}
+		}
+		
+		//Objeto 1
+		carro1 = new Carro("Ford","Ka");
+		console.log(carro1.getDetalhes());
+		
+		//Objeto 2
+		carro2 = new Carro("BMW","M3");
+		console.log(carro2.getDetalhes());
+		console.log(carro2.Marca);
+		console.log(carro2.Modelo);
+	</script>
+</html>

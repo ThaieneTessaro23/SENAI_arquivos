@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Drag and Drop</title>
+        <style>
+            body{
+                font-family: Arial;
+                display: flex;
+                justify-content: space-around;
+                margin-top: 50px;
+            }
+            .container{
+                width: 200px;
+                padding: 10px;
+                border: 2px solid #ccc;
+                border-radius: 10px;
+            }
+            .item{
+                padding: 10px;
+                margin: 5px 0;
+                background-color: #f4f4f4;
+                border: 1px solid #ddd;
+                border-radius: 10px;
+                cursor: grab;
+            }
+            .hidden{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="container1">
+            <div class="item" draggable="true">Item 1</div>
+            <div class="item" draggable="true">Item 2</div>
+            <div class="item" draggable="true">Item 3</div>
+        </div>
+
+        <div class="container" id="container2"></div>
+    </body>
+    <script>
+        //Selecionar todos os itens arrastáveis e container
+        const itens = document.querySelectorAll(".item");
+        const containers = document.querySelectorAll(".container");
+
+        //Adicionar evento drag_drop para os itens
+        itens.forEach(item => {
+            item.addEventListener("dragstart", dragStart);
+            item.addEventListener("dragend", dragEnd);
+        });
+
+        //Adicionar evento drag_drop para os containers
+        containers.forEach(container => {
+            container.addEventListener('dragover', dragOver);
+            container.addEventListener('dragenter', dragEnter);
+            container.addEventListener('drop', dragDrop);
+        });
+
+        //Função que vai ser chamada quando arrastar o item
+        function dragStart(e){
+            e.dataTransfer.setData("text/plain", e.target.innerText);
+            setTimeout(() => e.target.classList.add('hidden'), 0); //esconder
+        }
+
+        //Quando o item é solto
+        function dragEnd(e){
+            e.target.classList.remove("hidden");
+        }
+
+        //Função quando o item está sobre um container
+        function dragOver(e){
+            e.preventDefault();
+        }
+
+        function dragEnter(e){
+            e.preventDefault();
+        }
+
+        //Função quando o item é solto (drop) em um container
+        function dragDrop(e){
+            e.preventDefault();
+            const data = e.dataTransfer.getData('text/plain');
+            const novoItem = document.createElement('div');
+            novoItem.className = 'item';
+            novoItem.draggable = true;
+            novoItem.innerText = data;
+            e.target.appendChild(novoItem);
+
+            novoItem.addEventListener('dragstart', dragStart);
+            novoItem.addEventListener('dragend', dragEnd);
+        }
+
+    </script>
+</html>

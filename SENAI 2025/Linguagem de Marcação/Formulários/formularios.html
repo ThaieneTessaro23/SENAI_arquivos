@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+      <head>
+            <title>Meu Primeiro Formulário</title>
+            <meta charset="UTF-8">
+      </head>
+      <body>
+            <form action="#" method="POST">
+                  <label>Nome:</label>
+                  <br>
+                  <input type="text" id="nome" name="nome" required placeholder="Nome...">
+                  <br>
+                  <br>
+                  
+                  <label>Email:</label>
+                  <br>
+                  <input type="email" id="email" name="email" required placeholder="Email@email.com">
+                  <br>
+                  <br>
+                  
+                  <label>Telefone:</label>
+                  <br>
+                  <input type="tel" id="telefone" name="telefone"required>
+                  <br>
+                  <br>
+                  
+                  <label>Data de Nascimento:</label>
+                  <br>
+                  <input type="date" id="data_nasc" name="data_nasc" required max="2025-09-24">
+                  <br>
+                  <br>
+                  
+                  <label>Idade:</label>
+                  <br>
+                  <input type="number" id="idade" name="idade" min="16" max="120">
+                  <br>
+                  <br>
+                  
+                  
+                  <label>Sexo:</label>
+                  <br>
+                  <input type="radio" id="masc" name="sexo" value="Masculino">Masculino
+                  <br>
+                  <input type="radio" id="fem" name="sexo" value="Feminino">Feminino
+                  <br>
+                  <input type="radio" id="outros" name="sexo" value="Outros">Outros
+                  <br>
+                  <br>
+                  
+                  <label>Formação:</label>
+                  <br>
+                  <select name="formacao" id="formacao">
+                        <option>Selecione...</option>
+                        <option>Fundamental Completo</option>
+                        <option>Ensino Médio Completo</option>
+                        <option>Graduação</option>
+                        <option>Pós-Graduação</option>
+                  </select>
+                  <br>
+                  <br>
+                  
+                  <label>Foto:</label>
+                  <br>
+                  <input type="file" id="foto" name="foto">
+                  <br>
+                  <br>
+                  
+                  <label>Reclamações, comentários e elogios:</label>
+                  <br>
+                  <textarea id="comentario" name="comentario" placeholder="Insira seu texto..."></textarea>
+                  <br>
+                  <br>
+                  
+                  <input type="checkbox" id="termos" name="termos" required>Li e Aceito os termos de uso
+                  <br>
+                  <input type="checkbox" id="promo" name="promo">Aceito receber promoções
+                  <br>
+                  <input type="checkbox" id="cookie" name="cookie">Aceito os cookie do site
+                  <br>
+                  <br>
+                  
+                  <input type="submit" value="Enviar">
+            </form>
+      </body>
+</html>

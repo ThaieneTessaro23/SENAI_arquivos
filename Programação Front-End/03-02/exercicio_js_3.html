@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Exercicio 3</title>
+	</head>
+	<body>
+		<h2> Exercício 3 </h2>
+	</body>
+	<script>
+		let jogos=[];
+		
+		for (let i=0; i<5; i++){ 
+			jogos.push(prompt("Digite o "+ i +"° jogo que você gosta..."));
+		}
+		
+		jogos.forEach((valor, indice) => {
+			alert("Posição/Jogo: "+ indice +" => "+ valor);
+		});
+	</script>
+</html>

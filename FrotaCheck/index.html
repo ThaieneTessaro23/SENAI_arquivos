@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5C2D91">
+  <title>FrotaCheck - Gestão Inteligente de Frotas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="data:application/json,{%22name%22:%22FrotaCheck%22,%22short_name%22:%22FrotaCheck%22,%22start_url%22:%22index.html%22,%22display%22:%22standalone%22,%22background_color%22:%22%23FFFFFF%22,%22theme_color%22:%22%235C2D91%22}">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-shield">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#5C2D91" stroke="none"/>
+            <path d="M7 11.5l3 3 7-7" stroke="#F05123" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title"><span class="purple">FROTA</span><span class="orange">Check</span></span>
+          <span class="brand-tagline">GESTÃO INTELIGENTE DE FROTAS</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="veiculos.html">Veículos</a>
+        <a href="checklist.html">Novo Checklist</a>
+        <a href="historico.html">Histórico</a>
+      </nav>
+
+      <div class="status-badge" id="offlineBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">Online</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Inspeção e Gestão de Frota Offline</h1>
+        <p>Realize checklists operacionais com total independência da conexão de internet. Dados armazenados localmente e com suporte PWA.</p>
+        <div class="hero-buttons">
+          <a href="checklist.html" class="btn btn-primary">Iniciar Checklist</a>
+          <a href="veiculos.html" class="btn btn-outline">Cadastrar Veículo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDS DE MÉTRICAS -->
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-icon purple-bg">🚗</div>
+        <div class="metric-info">
+          <span class="metric-label">Veículos Cadastrados</span>
+          <h2 id="totalVehicles">0</h2>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon green-bg">✅</div>
+        <div class="metric-info">
+          <span class="metric-label">Veículos Liberados</span>
+          <h2 id="totalLiberated">0</h2>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon red-bg">🚫</div>
+        <div class="metric-info">
+          <span class="metric-label">Veículos Bloqueados</span>
+          <h2 id="totalBlocked">0</h2>
+        </div>
+      </div>
+
+      <div class="metric-card">
+        <div class="metric-icon orange-bg">📋</div>
+        <div class="metric-info">
+          <span class="metric-label">Inspeções Realizadas</span>
+          <h2 id="totalChecklists">0</h2>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÚLTIMOS CHECKLISTS -->
+    <section class="card">
+      <div class="card-header">
+        <h3>Últimas Inspeções Registradas</h3>
+        <a href="historico.html" class="link-more">Ver Todos →</a>
+      </div>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Data / Hora</th>
+              <th>Veículo</th>
+              <th>Responsável</th>
+              <th>Resultado</th>
+            </tr>
+          </thead>
+          <tbody id="recentHistoryTable">
+            <!-- Inserido dinamicamente via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <p>&copy; FrotaCheck - Sistema de Inspeção PWA SENAI | Funcionamento 100% Offline</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

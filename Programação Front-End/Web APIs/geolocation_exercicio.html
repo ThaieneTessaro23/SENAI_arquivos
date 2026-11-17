@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"> <!--Fazer redicionamento-->
+        <title>Localização no Mapa</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+        <style>
+            #map{
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            //Função para exibir o mapa com a localização atual
+            function mostrarMapa(
+                latitude, longitude, 
+                latitude2, longitude2, 
+                latitude3, longitude3,
+                latitude4, longitude4,
+                latitude5, longitude5,
+                latitude6, longitude6,
+                latitude7, longitude7,
+                latitude8, longitude8,
+                latitude9, longitude9,
+                latitude10, longitude10,
+            ){
+                //Criar o mapa com a localização atual
+                var map = L.map('map').setView([latitude, longitude], 13);
+
+                 // Adiciona o OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Adiciona um marcador com a localização atual
+                L.marker([latitude, longitude]).addTo(map).bindPopup('Bolívia').openPopup();
+                L.marker([latitude2, longitude2]).addTo(map).bindPopup('Bahia').openPopup();
+                L.marker([latitude3, longitude3]).addTo(map).bindPopup('Líbia').openPopup();
+                L.marker([latitude4, longitude4]).addTo(map).bindPopup('Argentina').openPopup();
+                L.marker([latitude5, longitude5]).addTo(map).bindPopup('Argentina').openPopup();
+                L.marker([latitude6, longitude6]).addTo(map).bindPopup('Argentina').openPopup();
+                L.marker([latitude7, longitude7]).addTo(map).bindPopup('Argentina').openPopup();
+                L.marker([latitude8, longitude8]).addTo(map).bindPopup('Argentina').openPopup();
+                L.marker([latitude9, longitude9]).addTo(map).bindPopup('Argentina').openPopup();
+                L.marker([latitude10, longitude10]).addTo(map).bindPopup('Argentina').openPopup();
+            }
+
+            mostrarMapa(
+                -19.729278, -66.247440, 
+                -12.871766, -41.633011, 
+                27.028534, 17.277733,
+                -35.143731643464896, -64.40369092807816,
+                -26.55562457213674, -70.46814363067062,
+                20.090484872719603, -9.208378172547597,
+                6.025738067849882, -59.01187275353226,
+                4.061457269729751, -52.11919656220624,
+                9.976730580305304, -70.50854681749708,
+                -0.7178654279219783, -86.91438245992181
+            );
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Exemplo 12 - DOM + JS</title>
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<p id="pMeuNome">Meu nome é Thaiene</p>
+		<button onClick="colocarTexto()">Clique em mim!</button>
+		<button onClick="mudarCorTexto()">Mude a cor do texto!</button>
+		<button onClick="apagaTexto()">Apague o texto!</button>
+		<button onClick="aumentarFonte()"> Aumenta Fonte </button>
+		<button onClick="diminuirFonte()"> Diminuir Fonte </button>
+		<p id="mensagem"></p>
+	</body>
+	<script>
+		//Criando elementos
+		function colocarTexto(){
+			document.getElementById("mensagem").innerHTML = "Você clicou em mim 😡";
+		}
+		function apagaTexto(){
+			document.getElementById("mensagem").innerHTML = "";
+		}
+		function mudarCorTexto(){
+			var cor = prompt("Informe uma cor (red, blue or green):");
+			document.getElementById("mensagem").style.color = cor;
+		}
+		function aumentarFonte(){
+			document.getElementById("mensagem").style.fontSize = "72px";
+		}
+		function diminuirFonte(){
+			document.getElementById("mensagem").style.fontSize = "8px";
+		}
+	</script>
+</html>

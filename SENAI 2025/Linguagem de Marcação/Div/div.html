@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title> Div - Box Model</title>
+		<meta charset="UTF-8">
+		<style>
+			p{
+				color: #fff;
+				background-color: #dd203c;
+				padding-top: 50px;
+				padding-bottom: 50px;
+				padding-left: 80px;
+				border: 25px solid #a8a8a8;
+				margin: 25px 100px 75px 100px;
+			}
+			#padding2{
+				color: #fff;
+				background-color: #695adb;
+				padding: 25px 50px 190px 120px; <!-- Top, Right, Bottom, Left --!>
+			}
+			div{
+				margin: 20px;
+				padding: 20px;
+				border: 2px solid #55ad8c;
+			}
+			.minhaDiv{
+				border: 5px outset #3f3f3f;
+				background-color: #dd203c;
+				text-align: center;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Box Model:</h1>
+		<p>Padding</p>
+		<p id="padding2">Padding 2</p>
+		<div>
+			<h3>A div é só uma divisão</h3>
+		</div>
+		<div class="minhaDiv">
+			<h2>Cabeçalho da < div ></h2>
+			<span> Texto da < div ></span>
+		</div>
+		<span> Texto fora da < div ></span>
+	</body>
+</html>

@@ -1,0 +1,109 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+.content{
+    flex: 1;
+}
+.login-main{
+    flex: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 50px;
+}
+.login-header{
+    background-color: #333;
+    border-radius: 25px 25px 0px 0px;
+}
+.login-header h1{
+    text-align: center;
+    color: #fff;
+    padding: 12px;
+}
+.login-content{
+    border-radius: 0px 0px 25px 25px;
+    text-align:center;
+    border: 1px solid #EAEAEA;
+}
+.input-container{
+    position: relative;
+    margin: 20px;
+}
+.input-field{
+    display: block;
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+}
+.input-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: rgba(204,204,204,0);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.input-highlight{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background-color: #dd203c;
+    transition: all 0.3s ease;
+}
+.input-field:focus + .input-label{
+    top: -20px;
+    font-size: 12px;
+    color: #dd203c;
+}
+/* From Uiverse.io by vikiWayne */ 
+.button {
+  padding: 1em 2em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #dd203c;
+  transition: all 1000ms;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  outline: 2px solid #dd203c;
+  margin-bottom: 30px;
+}
+
+button:hover {
+  color: #ffffff;
+  transform: scale(1.1);
+  outline: 2px solid #dd203c;
+  box-shadow: 4px 5px 17px -4px #dd203c;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #dd203c;
+  transform: skewX(45deg);
+  z-index: -1;
+  transition: width 1000ms;
+}
+
+button:hover::before {
+  width: 250%;
+}

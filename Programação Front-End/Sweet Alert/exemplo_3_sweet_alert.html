@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Formulário com Sweet Alert</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+                font-family: 'Segoe UI';
+            }
+            body{
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+            }
+            .container{
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 16px;
+                width: 800px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                animation: fadeIn 0.6s ease-in-out;
+            }
+            h2{
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+            label{
+                display: block;
+                margin-bottom: 5px;
+                color: #555;
+                font-size: 14px;
+            }
+            input{
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                transition: 0.3s;
+                font-size: 14px;
+            }
+            input:focus{
+                border-color: #667eea;
+                outline: none;
+                box-shadow: 0 0 0 2px rgba(102, 126,234,0.2);
+            }
+            button{
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 10px;
+                background: linear-gradient(135deg, #667eea, #764ba2);
+                color: #fff;
+                font-size: 16px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            button:hover{
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Cadastro</h2>
+            <form>
+                <label>Nome: </label>
+                <input type="text" name="nome" id="nome" placeholder="Nome...">
+                <br><br>
+
+                <label>Idade: </label>
+                <input type="number" name="idade" id="idade" min="18" max="100" placeholder="Idade...">
+                <br><br>
+
+                <label>CPF: </label>
+                <input type="text" name="cpf" id="cpf" placeholder="CPF...">
+                <br><br>
+
+                <label>Data de Nascimento: </label>
+                <input type="date" name="data_nasc" id="data_nasc">
+                <br><br>
+
+                <button onclick="verificar_campos()">Sweet Alert</button>
+            </form>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function verificar_campos(){
+            event.preventDefault();
+
+            const nome = document.getElementById("nome").value;
+            const idade = document.getElementById("idade").value;
+            const cpf = document.getElementById("cpf").value;
+            const data_nasc = document.getElementById("data_nasc").value;
+
+            if(nome == "" || idade == "" || cpf == "" || data_nasc == ""){
+                Swal.fire({
+                    title: 'Erro!',
+                    text: 'Preencha todos os campos!!',
+                    icon: 'error'
+                });
+            }
+            else{
+                Swal.fire({
+                    title: 'Sucesso!',
+                    text: 'Cadastro realizado! 🥳',
+                    icon: 'success'
+                });
+            }
+        }
+    </script>
+</html>

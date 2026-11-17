@@ -1,0 +1,6 @@
+Desafio
+Tarefas de alto esforço: 5 x 8 = 40
+Tarefas de médio esforço: 21 x 5 = 105
+Tarefas de baixo esforço: 6 x 2 = 12
+12 + 105 + 40 = 157 + 32 = 189
+1 pessoa faz em 189

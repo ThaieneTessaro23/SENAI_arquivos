@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+      <head>
+            <meta charset="UTF-8">
+            <title>Tabelas HTML</title>
+      </head>
+      <body>
+            <header style="background-color: #aac1ff">
+                  <h1 style="text-align: center">Tabelas</h1>
+                  <hr>
+            </header>
+            <main>
+                  <article>
+                        <h2>Tabela de notas de um aluno</h2>
+                        <table border="1" style="width:100%">
+                              <tr>
+                                    <th>Disciplina</th>
+                                    <th>Nota 1</th>
+                                    <th>Nota 2</th>
+                                    <th>Nota 3</th>
+                                    <th>Nota 4</th>
+                                    <th>Média</th>
+                              </tr>
+                              <tr>
+                                    <td>Matemática</td> <!--Disciplina-->
+                                    <td>3,0</td> <!--Nota 1-->
+                                    <td>2,0</td> <!--Nota 2-->
+                                    <td>1,0</td> <!--Nota 3-->
+                                    <td>2,0</td> <!--Nota 4-->
+                                    <td>2,5</td> <!--Média-->
+                              </tr>
+                              <tr>
+                                    <td>Português</td> <!--Disciplina-->
+                                    <td>10,0</td> <!--Nota 1-->
+                                    <td>10,0</td> <!--Nota 2-->
+                                    <td>10,0</td> <!--Nota 3-->
+                                    <td>9,0</td> <!--Nota 4-->
+                                    <td>9,75</td> <!--Média-->
+                              </tr>
+                              <tr>
+                                    <td>Programação 1</td>
+                                    <td rowspan="2">10,0</td>
+                                    <td rowspan="2">8,0</td>
+                                    <td rowspan="2">10,0</td>
+                                    <td>9,0</td>
+                                    <td rowspan="2">9,25</td>
+                              </tr>
+                              <tr>
+                                    <td>Banco de Dados</td>
+                                    <td>9,0</td><!--Nota 4-->
+                              </tr>
+                              <tr>
+                                    <th colspan="5" style="background-color: #aac1ff">Média Total</th>
+                                    <td>7,1</td>
+                              </tr>
+                        </table>
+                  </article>
+            </main>
+      </body>
+</html>

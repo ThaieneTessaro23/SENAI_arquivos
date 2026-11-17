@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <main class="container">
+        <section class="formulario">
+            <header class="cabecalho">
+                <span class="logo">SENAI</span>
+                <h1>Cadastro de usuários</h1>
+                <p>Preencha os dados abaixo para cadastrar um novo usuário.</p>
+            </header>
+
+            <form id="formCadastro" novalidate>
+
+                <!-- Nome completo -->
+                <div class="campo">
+                    <label for="nome">Nome completo *</label>
+                    <input type="text" id="nome" placeholder="Digite o nome completo">
+                    <small class="mensagem-erro" id="erroNome"></small>
+                </div>
+
+                <!-- E-mail -->
+                <div class="campo">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" placeholder="Digite o e-mail">
+                    <small class="mensagem-erro" id="erroEmail"></small>
+                </div>
+
+                <!-- Linha 1: Matrícula e Perfil -->
+                <div class="linha">
+                    <div class="campo">
+                        <label for="matricula">Matricula *</label>
+                        <input type="text" id="matricula" placeholder="Digite a matricula">
+                        <small class="mensagem-erro" id="erroMatricula"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="perfil">Perfil *</label>
+                        <select id="perfil">
+                            <option value="" disabled selected hidden>Selecione</option>
+                            <option value="Aluno">Aluno</option>
+                            <option value="Docente">Professor</option>
+                            <option value="Colaborador">Colaborador</option>
+                        </select>
+                        <small class="mensagem-erro" id="erroPerfil"></small>
+                    </div>
+                </div>
+
+                <!-- Linha 2: Curso ou setor e Turno -->
+                <div class="linha">
+                    <div class="campo">
+                        <label for="curso">Curso ou setor *</label>
+                        <input type="text" id="curso" placeholder="Digite o curso ou setor">
+                        <small class="mensagem-erro" id="erroCurso"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="turno">Turno *</label>
+                        <select id="turno">
+                            <option value="" disabled selected hidden>Selecione</option>
+                            <option value="Dia">Dia</option>
+                            <option value="Noite">Noite</option>
+                            <option value="Integral">Integral</option>
+                        </select>
+                        <small class="mensagem-erro" id="erroTurno"></small>
+                    </div>
+                </div>
+
+                <!-- Linha 3: Senha e Confirmar senha -->
+                <div class="linha">
+                    <div class="campo">
+                        <label for="senha">Senha *</label>
+                        <input type="password" id="senha" placeholder="Mínimo de 6 caracteres">
+                        <small class="mensagem-erro" id="erroSenha"></small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="confirmarSenha">Confirmar senha *</label>
+                        <input type="password" id="confirmarSenha" placeholder="Digite a senha novamente">
+                        <small class="mensagem-erro" id="erroConfirmarSenha"></small>
+                    </div>
+                </div>
+
+                <!-- Termos -->
+                <div class="termos">
+                    <label>
+                        <input type="checkbox" id="termos">
+                        Confirmo que os dados informados estão corretos.
+                    </label>
+                    <small class="mensagem-erro" id="erroTermos"></small>
+                </div>
+
+                <!-- Botão -->
+                <button type="button" onclick="validarCadastro()">
+                    Cadastrar usuário
+                </button>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>

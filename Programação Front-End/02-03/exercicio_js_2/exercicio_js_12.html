@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercício 12 - JS</title>
+        <style>
+            .erro{
+                color: red;
+                font-size: 14px;
+            }
+            input{
+                display: block;
+                padding: 5px;
+                width:250px;
+            }
+            .bordaVermelha{
+                border: 2px solid red;
+            }
+            .bordaVerde{
+                border: 2px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Cadastro de Funcionários</h1>
+        <hr>
+        <form id="formCadastro">
+            <label>Nome Completo: </label>
+            <input type="text" id="nome" name="nome" placeholder="Nome...">
+            <span id="erroNome" class="erro"></span>
+            <br><br>
+
+            <label>CPF: </label>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+            <span id="erroCPF" class="erro"></span>
+            <br><br>
+
+            <label>Telefone: </label>
+            <input type="text" id="tel" name="tel" placeholder="(00)00000-0000">
+            <span id="erroTel" class="erro"></span>
+            <br><br>
+
+            <label>E-mail corporativo: </label>
+            <input type="email" id="email" name="email" placeholder="email@email.com">
+            <span id="erroEmail" class="erro"></span>
+            <br><br>
+
+            <label>Data de Nascimento: </label>
+            <input type="date" id="data" name="data">
+            <span id="erroData" class="erro"></span>
+            <br><br>
+
+            <label>Cargo: </label>
+            <input type="text" id="cargo" name="cargo" placeholder="Cargo...">
+            <span id="erroCargo" class="erro"></span>
+            <br><br>
+
+            <label>Setor: </label>
+            <select id="setor" name="setor">
+                <option value="">-- Selecione --</option>
+                <option value="Produção">Produção</option>
+                <option value="Manutenção">Manutenção</option>
+                <option value="Logística">Logística</option>
+                <option value="Administração">Administração</option>
+                <option value="Qualidade">Qualidade</option>
+            </select>
+            <span id="erroSetor" class="erro"></span>
+            <br><br>
+
+            <button type="submit">Enviar!</button>
+        </form>
+
+        <script src="exercicio_js_12.js"></script>
+    </body>
+</html>

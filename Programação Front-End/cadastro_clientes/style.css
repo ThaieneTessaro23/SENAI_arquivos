@@ -1,0 +1,232 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 30px;
+font-family: Arial, sans-serif;
+
+background: linear-gradient(135deg, #f5f5f5, #cb1136);
+}
+
+.container {
+width: 100%;
+max-width: 800px;
+}
+
+.formulario {
+padding: 35px;
+border-radius: 10px;
+background-color: white;
+box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e30613;
+}
+
+.cabecalho h1 {
+    color: #e30613;
+    margin-bottom: 8px;
+}
+
+.cabecalho p {
+    color: #666;
+}
+
+.logo {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 15px;
+    background-color: #e30613;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.linha {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
+
+.campo {
+margin-bottom: 18px;
+}
+
+.campo label {
+display: block;
+margin-bottom: 6px;
+font-weight: bold;
+}
+
+.campo input,
+.campo select {
+width: 100%;
+height: 45px;
+padding: 0 12px;
+border: 1px solid #cccccc;
+border-radius: 5px;
+font-size: 15px;
+}
+
+.campo input:focus,
+.campo select:focus {
+border-color: #e30613;
+outline: none;
+}
+
+.campo input.invalido,
+.campo select.invalido {
+border-color: #c62828;
+background-color: #fff5f5;
+}
+
+.campo input.invalido:focus,
+.campo select.invalido:focus {
+    border-color: #c62828;
+    box-shadow: 0 0 8px rgba(198,40,40,.4);
+    outline: none;
+}
+
+.mensagem-erro {
+min-height: 15px;
+display: block;
+margin-top: 5px;
+color: #c62828;
+font-size: 12px;
+}
+
+.termos {
+margin-bottom: 20px;
+}
+
+.termos label {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+
+button {
+width: 100%;
+height: 48px;
+border: none;
+border-radius: 5px;
+color: white;
+background-color: #e30613;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #b9000a;
+}
+
+@media (max-width: 600px) {
+body {
+padding: 15px;
+}
+
+.formulario,
+.clientes-cadastrados {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    margin-bottom: 30px;
+}
+
+.linha {
+grid-template-columns: 1fr;
+gap: 0;
+}
+}
+
+.table {
+    margin-top: 15px;
+}
+
+/* ===========================
+   TABELA DE CLIENTES
+=========================== */
+
+.clientes-cadastrados {
+    margin-top: 40px;
+}
+
+.clientes-cadastrados h2 {
+    text-align: center;
+    color: #fffbfb;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.clientes-cadastrados h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #690000;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+#tabelaClientes {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#tabelaClientes thead {
+    background-color: #e30613;
+    color: white;
+}
+
+#tabelaClientes th {
+    padding: 15px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#tabelaClientes td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+    color: #444;
+}
+
+#tabelaClientes tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+#tabelaClientes tbody tr:hover {
+    background-color: #ffe8ea;
+    transition: 0.3s;
+}
+
+#tabelaClientes tbody tr:last-child td {
+    border-bottom: none;
+}

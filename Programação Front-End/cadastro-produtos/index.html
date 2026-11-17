@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro de Produtos</title>
+
+  <!-- Arquivo de estilos: cuida apenas da APARÊNCIA da página -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="container">
+    <h1>Cadastro de Produtos</h1>
+    <p class="subtitulo">Informe os dados do produto e calcule o total (Preço × Quantidade)</p>
+
+    <!-- ==========================================================
+         FORMULÁRIO DE ENTRADA
+         Aqui o usuário digita o nome, o preço e a quantidade.
+         Cada campo tem um "id" único, que será usado no JavaScript
+         (arquivo app.js) para capturar o valor digitado.
+    =========================================================== -->
+    <form id="formProduto">
+
+      <div class="campo">
+        <label for="nomeProduto">Nome do produto</label>
+        <input
+          type="text"
+          id="nomeProduto"
+          name="nomeProduto"
+          placeholder="Ex: Teclado"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="precoProduto">Preço unitário (R$)</label>
+        <input
+          type="number"
+          id="precoProduto"
+          name="precoProduto"
+          placeholder="Ex: 120.00"
+          min="0"
+          step="0.01"
+          required
+        />
+      </div>
+
+      <div class="campo">
+        <label for="quantidadeProduto">Quantidade</label>
+        <input
+          type="number"
+          id="quantidadeProduto"
+          name="quantidadeProduto"
+          placeholder="Ex: 2"
+          min="1"
+          step="1"
+          required
+        />
+      </div>
+
+      <!-- Botão que dispara o cálculo. type="button" evita que a
+           página recarregue (comportamento padrão de um <form>). -->
+      <button type="button" id="btnCalcular">Calcular</button>
+    </form>
+
+    <!-- ==========================================================
+         ÁREA DE RESULTADO
+         Inicialmente escondida (classe "escondido" no CSS).
+         O JavaScript vai preencher os campos abaixo e exibir
+         esta seção depois que o usuário clicar em "Calcular".
+    =========================================================== -->
+    <section id="resultado" class="resultado escondido">
+      <h2>Resultado</h2>
+
+      <div class="linha-resultado">
+        <span>Produto:</span>
+        <span id="resultadoNome"></span>
+      </div>
+
+      <div class="linha-resultado">
+        <span>Quantidade:</span>
+        <span id="resultadoQuantidade"></span>
+      </div>
+
+      <div class="linha-resultado destaque">
+        <span>Total:</span>
+        <span id="resultadoTotal"></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================
+       IMPORTANTE: type="module"
+       Isso diz ao navegador que app.js é um MÓDULO JavaScript,
+       ou seja, ele pode usar "import" para trazer funções de
+       outros arquivos (produtos.js e formatacao.js).
+
+       Não precisamos adicionar <script> separado para os outros
+       arquivos: o próprio sistema de módulos do JavaScript
+       encontra e carrega automaticamente tudo o que é importado
+       dentro de app.js.
+  =========================================================== -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

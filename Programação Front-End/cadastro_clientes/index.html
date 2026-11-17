@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Clientes</title>
+
+    <!-- Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Seu arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- SweetAlert2 via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- jQuery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Inputmask via CDN -->
+    <script src="https://unpkg.com/inputmask@5.0.9/dist/inputmask.min.js"></script>
+
+    <!-- Seu arquivo JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container py-5">
+
+        <!-- FORMULÁRIO DE CADASTRO -->
+        <section class="formulario">
+
+            <header class="cabecalho text-center mb-4">
+                <span class="logo">SENAI</span>
+                <h1>Cadastro de Clientes</h1>
+                <p>Preencha os dados abaixo para cadastrar um novo cliente.</p>
+            </header>
+
+            <form id="formCadastro" novalidate>
+
+                <!-- Nome -->
+                <div class="row">
+                    <div class="col-12 mb-3 campo">
+                        <label for="nome" class="form-label">Nome completo *</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Digite o nome completo">
+                        <small class="mensagem-erro text-danger" id="erroNome"></small>
+                    </div>
+                </div>
+
+                <!-- CPF e Telefone -->
+                <div class="row">
+                    <div class="col-md-6 mb-3 campo">
+                        <label for="cpf" class="form-label">CPF *</label>
+                        <input type="text" class="form-control" id="cpf" placeholder="Digite o CPF">
+                        <small class="mensagem-erro text-danger" id="erroCpf"></small>
+                    </div>
+
+                    <div class="col-md-6 mb-3 campo">
+                        <label for="telefone" class="form-label">Telefone *</label>
+                        <input type="text" class="form-control" id="telefone" placeholder="Digite o telefone">
+                        <small class="mensagem-erro text-danger" id="erroTelefone"></small>
+                    </div>
+                </div>
+
+                <!-- E-mail -->
+                <div class="row">
+                    <div class="col-12 mb-3 campo">
+                        <label for="email" class="form-label">E-mail *</label>
+                        <input type="email" class="form-control" id="email" placeholder="Digite o e-mail">
+                        <small class="mensagem-erro text-danger" id="erroEmail"></small>
+                    </div>
+                </div>
+
+                <!-- Tipo e Período -->
+                <div class="row">
+                    <div class="col-md-6 mb-3 campo">
+                        <label for="tipo" class="form-label">Tipo de cliente *</label>
+                        <select id="tipo" class="form-select">
+                            <option value="" disabled selected hidden>Selecione</option>
+                            <option value="Pessoa">Pessoa física</option>
+                            <option value="Microempreendedor">Microempreendedor</option>
+                            <option value="Empresa">Empresa</option>
+                        </select>
+                        <small class="mensagem-erro text-danger" id="erroTipo"></small>
+                    </div>
+
+                    <div class="col-md-6 mb-3 campo">
+                        <label for="periodo" class="form-label">Período preferencial para contato *</label>
+                        <select id="periodo" class="form-select">
+                            <option value="" disabled selected hidden>Selecione</option>
+                            <option value="Manhã">Manhã</option>
+                            <option value="Tarde">Tarde</option>
+                            <option value="Noite">Noite</option>
+                        </select>
+                        <small class="mensagem-erro text-danger" id="erroPeriodo"></small>
+                    </div>
+                </div>
+
+                <!-- Botões -->
+                <div class="row mt-3">
+                    <div class="col-12 d-flex gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            Cadastrar cliente
+                        </button>
+
+                        <button type="reset" class="btn btn-secondary" id="btnLimpar">
+                            Limpar
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- TABELA DE CLIENTES -->
+        <section class="clientes-cadastrados mt-5">
+
+            <h2 class="mb-3">Clientes cadastrados</h2>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover" id="tabelaClientes">
+
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nome completo</th>
+                            <th>CPF</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Tipo de cliente</th>
+                            <th>Período preferencial</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaClientes">
+                        <!-- Os clientes cadastrados serão adicionados aqui pelo JavaScript -->
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Bootstrap JavaScript via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

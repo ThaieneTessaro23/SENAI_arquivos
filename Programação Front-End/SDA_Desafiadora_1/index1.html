@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Atividade Agrícola</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Cadastro de Atividades Agrícolas 🌾</h2>
+            <form class="formCadastro">
+                <label>Nome do Insumo: </label>
+                <input type="text" id="insumo" name="insumo">
+                <span id="erroInsumo" class="erro"></span>
+                <br><br>
+
+                <label>Área do Talhão (m²): </label>
+                <input type="number" id="area" name="area" min="1">
+                <span id="erroArea" class="erro"></span>
+                <br><br>
+
+                <label>Quantidade Aplicada: </label>
+                <input type="number" id="quantidade" name="quantidade" min="1">
+                <span id="erroQuantidade" class="erro"></span>
+                <br><br>
+
+                <label>Data da Aplicação: </label>
+                <input type="date" id="data" name="data">
+                <span id="erroData" class="erro"></span>
+                <script>
+                    const hoje = new Date().toISOString().split('T')[0];
+                    document.getElementById('data').setAttribute('max', hoje);
+                </script>
+                <br><br>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <br><br><br>
+            <h2>Informações Agrícolas:</h2>
+            <table>
+            <thead>
+                <tr>
+                    <th>Insumo</th>
+                    <th>Área</th>
+                    <th>Quantidade</th>
+                    <th>Data</th>
+                    <th>Custo</th>
+                </tr>
+                </thead>
+                <tbody id="tabelaAtividades"></tbody>
+            </table>
+        </div>
+
+        <script src="validacao.js"></script>
+    </body>
+</html>

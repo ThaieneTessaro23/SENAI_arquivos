@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#5C2D91">
+  <title>Realizar Checklist - FrotaCheck</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <div class="logo-shield">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#5C2D91" stroke="none"/>
+            <path d="M7 11.5l3 3 7-7" stroke="#F05123" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title"><span class="purple">FROTA</span><span class="orange">Check</span></span>
+          <span class="brand-tagline">GESTÃO INTELIGENTE DE FROTAS</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="veiculos.html">Veículos</a>
+        <a href="checklist.html" class="active">Novo Checklist</a>
+        <a href="historico.html">Histórico</a>
+      </nav>
+
+      <div class="status-badge" id="offlineBadge">
+        <span class="status-dot"></span>
+        <span id="statusText">Online</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-title">
+      <h2>Checklist de Inspeção de Veículo</h2>
+      <p>Realize a verificação completa dos 5 itens de segurança antes da utilização.</p>
+    </div>
+
+    <section class="card">
+      <form id="checklistForm">
+        <!-- DADOS DA INSPEÇÃO -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="selectVehicle">Selecione o Veículo *</label>
+            <select id="selectVehicle" class="form-control" required>
+              <option value="">-- Escolha um Veículo --</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="responsavel">Nome do Motorista / Responsável *</label>
+            <input type="text" id="responsavel" class="form-control" placeholder="Ex: Carlos Silva" required>
+          </div>
+        </div>
+
+        <h4 class="section-subtitle">Itens de Inspeção Obrigatórios (Tema 03)</h4>
+
+        <div class="checklist-items">
+          <!-- Item 1: Pneus -->
+          <div class="check-item">
+            <div class="check-info">
+              <strong>1. Pneus</strong>
+              <p>Calibragem, desgaste da banda de rodagem, estepe e fixação.</p>
+            </div>
+            <div class="check-options">
+              <label class="radio-label green">
+                <input type="radio" name="pneus" value="Conforme" checked> Conforme
+              </label>
+              <label class="radio-label red">
+                <input type="radio" name="pneus" value="Não conforme"> Não conforme
+              </label>
+            </div>
+          </div>
+
+          <!-- Item 2: Freios -->
+          <div class="check-item">
+            <div class="check-info">
+              <strong>2. Freios</strong>
+              <p>Fluido de freio, resposta do pedal, freio de mão e pastilhas.</p>
+            </div>
+            <div class="check-options">
+              <label class="radio-label green">
+                <input type="radio" name="freios" value="Conforme" checked> Conforme
+              </label>
+              <label class="radio-label red">
+                <input type="radio" name="freios" value="Não conforme"> Não conforme
+              </label>
+            </div>
+          </div>
+
+          <!-- Item 3: Faróis -->
+          <div class="check-item">
+            <div class="check-info">
+              <strong>3. Faróis e Iluminação</strong>
+              <p>Farol alto/baixo, setas, luzes de freio, ré e pisca-alerta.</p>
+            </div>
+            <div class="check-options">
+              <label class="radio-label green">
+                <input type="radio" name="farois" value="Conforme" checked> Conforme
+              </label>
+              <label class="radio-label red">
+                <input type="radio" name="farois" value="Não conforme"> Não conforme
+              </label>
+            </div>
+          </div>
+
+          <!-- Item 4: Combustível -->
+          <div class="check-item">
+            <div class="check-info">
+              <strong>4. Combustível</strong>
+              <p>Nível suficiente para o percurso e ausência de vazamentos.</p>
+            </div>
+            <div class="check-options">
+              <label class="radio-label green">
+                <input type="radio" name="combustivel" value="Conforme" checked> Conforme
+              </label>
+              <label class="radio-label red">
+                <input type="radio" name="combustivel" value="Não conforme"> Não conforme
+              </label>
+            </div>
+          </div>
+
+          <!-- Item 5: Documentação -->
+          <div class="check-item">
+            <div class="check-info">
+              <strong>5. Documentação e Equipamentos</strong>
+              <p>CRLV vigente, CNH do condutor, triângulo, macaco e chave de roda.</p>
+            </div>
+            <div class="check-options">
+              <label class="radio-label green">
+                <input type="radio" name="documentacao" value="Conforme" checked> Conforme
+              </label>
+              <label class="radio-label red">
+                <input type="radio" name="documentacao" value="Não conforme"> Não conforme
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-top: 20px;">
+          <label for="observacoes">Observações Gerais / Detalhes de Avarias</label>
+          <textarea id="observacoes" class="form-control" rows="3" placeholder="Informe detalhes adicionais caso algum item esteja não conforme..."></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg">Finalizar e Salvar Inspeção</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; FrotaCheck - Sistema de Inspeção PWA SENAI | Funcionamento 100% Offline</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

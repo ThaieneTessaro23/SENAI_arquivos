@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amigo de Quatro Patas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <span class="badge">🐾 Explorador de cães</span>
+      <h1>Amigo de Quatro Patas</h1>
+      <p>Pesquise uma raça e descubra informações, características e uma foto de um cão.</p>
+    </header>
+
+    <section class="search-box">
+      <label for="breedInput">Nome da raça</label>
+      <div class="search-row">
+        <input id="breedInput" type="text" placeholder="Ex.: Labrador, Poodle, Husky" autocomplete="off">
+        <button id="searchBtn">Pesquisar</button>
+        <button id="randomBtn" class="secondary">Cão aleatório</button>
+        <button id="clearBtn" class="ghost">Limpar</button>
+      </div>
+      <p class="hint">Digite parte ou o nome completo da raça. A busca não diferencia maiúsculas de minúsculas.</p>
+    </section>
+
+    <div id="message" class="message" role="status"></div>
+    <section id="results" class="results" aria-live="polite"></section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

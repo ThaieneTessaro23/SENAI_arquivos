@@ -1,0 +1,45 @@
+	main{
+		border: 5px solid gray;
+		padding: 8px;
+	}
+	h1{
+		text-align: center;
+		text-transform: uppercase;
+		color: #4caf50;
+	}
+	p{
+		text-indent: 50px;
+		text-align: justify;
+		letter-spacing: 3px;
+	}
+	#primeiro-texto{
+		color: #3d7014;
+	}
+	.primeiro:hover{
+		color: #ffcc00;
+		font-size: 40px;
+	}
+	.primeiro:visited{
+		color: #ed7014;
+	}
+	.primeiro:link{
+		color: #7f00ff;
+	}
+	.segundo:hover{
+		font-size: 150%;
+	}
+	.terceiro:hover{
+		background: #fc8eac;
+	}
+	.quarto:hover{
+		font-family: monospace;
+	}
+	.quinto:hover{
+		text-decoration: none;
+		color: #7f00ff;
+	}
+	img{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}

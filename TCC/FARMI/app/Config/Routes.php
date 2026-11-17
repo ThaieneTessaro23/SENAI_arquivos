@@ -1,0 +1,131 @@
+<?php
+
+use CodeIgniter\Router\RouteCollection;
+
+/**
+ * @var RouteCollection $routes
+ */
+
+// =========================
+// ROTAS PÚBLICAS (WEB)
+// =========================
+$routes->get('/', 'HomeController::index');
+
+$routes->get('/login', 'AuthController::login');
+
+$routes->get('/login/google', 'AuthController::google');
+$routes->get('/login/google-callback', 'AuthController::googleCallback');
+
+$routes->post('/login/autenticar', 'AuthController::autenticar');
+
+$routes->get('/logout', 'AuthController::logout');
+
+
+// =========================
+// ROTAS PROTEGIDAS (EXIGE LOGIN VIA FILTRO)
+// =========================
+$routes->group('', ['filter' => 'auth'], function($routes) {
+
+    // FAZENDA
+    $routes->get('/fazenda', 'FazendaController::index');
+    $routes->get('/fazenda/novo', 'FazendaController::novo');
+    $routes->post('/fazenda/inserir', 'FazendaController::inserir');
+    $routes->get('/fazenda/editar/(:num)', 'FazendaController::editar/$1');
+    $routes->match(['get', 'post'], '/fazenda/atualizar/(:num)', 'FazendaController::atualizar/$1');
+    $routes->get('/fazenda/excluir/(:num)', 'FazendaController::excluir/$1');
+
+    // CULTURA
+    $routes->get('/cultura-admin', 'CulturaController::index');
+    $routes->get('/cultura/novo', 'CulturaController::novo');
+    $routes->post('/cultura/inserir', 'CulturaController::inserir');
+    $routes->get('/cultura/editar_culturas/(:num)', 'CulturaController::editar/$1');
+    $routes->post('/cultura/atualizar/(:num)', 'CulturaController::atualizar/$1');
+    $routes->get('/cultura/excluir/(:num)', 'CulturaController::excluir/$1');
+
+    // SENSORES
+    $routes->get('/sensor', 'SensorController::index');
+    $routes->post('/sensor/inserir', 'SensorController::inserir');
+    $routes->get('/sensor/editar/(:num)', 'SensorController::editar/$1');
+    $routes->post('/sensor/atualizar/(:num)', 'SensorController::atualizar/$1');
+    $routes->get('/sensor/excluir/(:num)', 'SensorController::excluir/$1');
+
+    // USUARIOS
+    $routes->get('/usuarios-admin', 'UsuariosController::index');
+    $routes->post('/usuarios/inserir', 'UsuariosController::inserir');
+    $routes->post('/usuarios/atualizar/(:any)', 'UsuariosController::atualizar/$1');
+    $routes->get('/usuarios/excluir/(:any)', 'UsuariosController::excluir/$1');
+    $routes->get('/usuarios_editar/(:any)', 'UsuariosController::pagina_editar/$1');
+
+    // LEITURA SENSOR
+    $routes->get('/leitura_sensor', 'LeituraSensorController::index');
+    $routes->get('/leitura_sensor/novo', 'LeituraSensorController::novo');
+    $routes->post('/leitura_sensor/inserir', 'LeituraSensorController::inserir');
+    $routes->get('/leitura_sensor/editar/(:num)', 'LeituraSensorController::editar/$1');
+    $routes->post('/leitura_sensor/atualizar/(:num)', 'LeituraSensorController::atualizar/$1');
+    $routes->get('/leitura_sensor/excluir/(:num)', 'LeituraSensorController::excluir/$1');
+
+    // SISTEMA - ADMIN
+    $routes->get('/adicionar-fazenda', 'FazendaController::novo');
+    $routes->get('/alertas-admin', 'AlertaController::index');
+    $routes->get('/alterar-senha-admin', 'SistemaController::alterar_senha_admin');
+    $routes->post('/alterar-senha-admin', 'SistemaController::salvar_senha_admin');
+    $routes->get('/configuracoes-admin', 'SistemaController::configuracoes_admin');
+    $routes->get('/dashboard-admin', 'SistemaController::dashboard_admin');
+    $routes->get('/fazendas-admin', 'FazendaController::index');
+    $routes->get('/recuperar-senha-admin', 'SistemaController::recuperar_senha_admin');
+    $routes->get('/relatorio', 'RelatorioController::index'); //Relatório
+
+    // SISTEMA - USUÁRIO
+    $routes->get('/alertas-usuario', 'AlertaController::alertas_usuario');
+    $routes->get('/alterar-senha', 'UsuariosController::alterar_senha');
+    $routes->post('/alterar-senha', 'SistemaController::salvar_senha_usuario');
+    $routes->get('/configuracoes-usuario', 'SistemaController::configuracoes_usuario');
+    $routes->get('/dashboard-usuario', 'SistemaController::dashboard_usuario');
+    $routes->get('/luz', 'SistemaController::luz');
+    $routes->get('/recuperar-senha', 'UsuariosController::recuperar_senha');
+    $routes->get('/solo', 'SistemaController::solo');
+    $routes->get('/temperatura', 'SistemaController::temperatura');
+    $routes->get('/umidade', 'SistemaController::umidade');
+    $routes->get('/usuario', 'UsuariosController::usuario');
+    $routes->get('/usuarios_editar', 'UsuariosController::pagina_editar');
+    $routes->get('/dados-graficos', 'SistemaController::dados_graficos');
+    $routes->get('/status-sensores', 'SistemaController::status_sensores');
+    $routes->get('/relatorio', 'RelatorioController::index'); //Relatório
+});
+
+
+// =========================
+// ROTAS DA API (PÚBLICAS / ESP32 / FLUTTER)
+// =========================
+$routes->group('api', ['namespace' => 'App\Controllers\Api'], static function ($routes) {
+    // Tratamento Universal de Preflight (CORS) para Flutter Web
+    $routes->options('(:any)', static function () {
+        return response()
+            ->setHeader('Access-Control-Allow-Origin', '*')
+            ->setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
+            ->setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE')
+            ->setStatusCode(200);
+    });
+
+    $routes->get('dashboard/stats', 'DashboardController::index');
+
+    // Rota específica de histórico (Deve vir ANTES do resource de sensores)
+    $routes->get('sensores/(:num)/historico', 'SensoresController::historico/$1');
+
+    // Recursos REST
+    $routes->resource('sensores', ['controller' => 'SensoresController']);
+    $routes->resource('fazendas', ['controller' => 'FazendaController']);
+    $routes->resource('culturas', ['controller' => 'CulturaController']);
+    $routes->resource('medidas_sensores', ['controller' => 'MedidasSensoresController']);
+
+    // Autenticação API
+    $routes->get('login', 'AuthController::index');
+    $routes->post('login', 'AuthApiController::login');
+
+    // Endpoints adicionais
+    $routes->get('usuarios', 'UsuariosController::index');
+    $routes->get('usuarios/(:segment)', 'UsuariosController::show/$1');
+
+    $routes->get('alertas', 'AlertaController::index');
+    $routes->get('alertas/(:num)', 'AlertaController::show/$1');
+});

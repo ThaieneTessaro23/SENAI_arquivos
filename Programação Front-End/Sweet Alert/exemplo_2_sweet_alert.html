@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Exemplo 2 - Sweet Alert</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    </head>
+    <body>
+        <button onclick="mostrarAlerta()">Sweet Alert</button>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function mostrarAlerta(){
+            Swal.fire({
+                title: "Você tem certeza disso?",
+                text: "Essa ação não pode ser revertida!",
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Salvar",
+                denyButtonText: `Não Salvar`,
+                cancelButtonText: "Cancelar"
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) Swal.fire("Salvo com sucesso!", "", "success");
+                else if (result.isDenied) Swal.fire("Alterações não foram salvas", "", "info");
+            });
+        }
+    </script>
+</html>

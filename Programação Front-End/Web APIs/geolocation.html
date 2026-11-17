@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0"> <!--Fazer redicionamento-->
+        <title>Localização Atual no Mapa</title>
+        <link rel="slysheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+        <style>
+            #map{
+                height: 100vh;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            //Função para exibir o mapa com a localização atual
+            function mostrarMapa(latitude, longitude){
+                //Criar o mapa com a localização atual
+                var mapa = L.map('map').setView([latitude, longitude], 13);
+
+                 // Adiciona o OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: 'OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Adiciona um marcador com a localização atual
+                L.marker([latitude, longitude]).addTo(map)
+                    .bindPopup('Você está aqui!')
+                    .openPopup();
+                
+            }
+
+            //Função para obter a localização atual
+            function getLocation(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(
+                        function(position){
+                            var latitude = position.coords.latitude;
+                            var longitude = position.coords.longitude;
+                            mostrarMapa(latitude, longitude);
+                        },
+                        function(error){
+                            allert("Erro ao obter localização: " +error.message);
+                        }
+                    );
+                }
+                else{
+                    alert("Geolocalização não é suportada pelo navegador| !");
+                }
+            }
+
+            //Chama a função
+            getLocation();
+        </script>
+    </body>
+</html>
